@@ -1,6 +1,8 @@
 import csv
 from dataclasses import dataclass
 from typing import Set
+from phone import normalize_phone
+
 
 @dataclass
 class Payment:
@@ -22,15 +24,15 @@ class Payment:
                     first_name=row["Guest first name"],
                     last_name=row["Guest last name"],
                     email=row["Email"],
-                    phone=row["Phone Number"]
+                    phone=normalize_phone(row.get("Phone Number",'')),
                 ))
         return payments
 
     def __hash__(self):
-        return hash((self.email, self.phone))
+        return hash(self.order_number)
 
     def __eq__(self, other):
         if not isinstance(other, Payment):
             return False
-        return (self.email, self.phone) == (other.email, other.phone)
+        return self.order_number == other.order_number
 

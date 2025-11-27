@@ -5,7 +5,7 @@ from pathlib import Path
 from matcher import (
     families_with_payment_email,
     families_with_payment_phone,
-    families_with_payments,
+    families_with_payment,
     get_matched_payments,
     match_families_with_payments,
 )
@@ -13,6 +13,13 @@ from matcher import (
 package_root = Path(__file__).parent
 guest_list_path = package_root / 'data' / 'guest-list.csv'
 payment_path = package_root / 'data' / 'payment.csv'
+
+def test_family_equal(sample_data):
+    alice1 = Family(email="alice@example.com", phone="111"),  # match both
+    alice2 = Family(email="alice@example.com", phone="222"),  # match both
+    david = Family(email="david@example.com", phone="111"),  # match phone
+    assert alice1 == alice2
+    assert alice1 != david
 
 def test_family_from_csv():
     families = Family.from_csv(guest_list_path)
@@ -56,9 +63,9 @@ def test_families_with_payment_phone(sample_data):
     assert "444" not in phones
 
 
-def test_families_with_payments_union(sample_data):
+def test_families_with_payment_union(sample_data):
     payments, families = sample_data
-    matched = families_with_payments(payments, families)
+    matched = families_with_payment(payments, families)
     emails = {f.email for f in matched}
     assert "alice@example.com" in emails
     assert "david@example.com" in emails
@@ -68,7 +75,7 @@ def test_families_with_payments_union(sample_data):
 
 def test_get_matched_payments(sample_data):
     payments, families = sample_data
-    matched_families = families_with_payments(payments, families)
+    matched_families = families_with_payment(payments, families)
     matched = get_matched_payments(payments, matched_families)
     emails = {p.email for p in matched}
     assert "alice@example.com" in emails
@@ -77,7 +84,7 @@ def test_get_matched_payments(sample_data):
     assert "eve@example.com" not in emails
 
 
-def test_match_families_with_payments(sample_data):
+def test_match_families_with_payment(sample_data):
     payments, families = sample_data
     matched_families, get_matched_payments_set = match_families_with_payments(payments, families)
     assert any(f.email == "alice@example.com" for f in matched_families)

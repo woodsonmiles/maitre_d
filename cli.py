@@ -4,7 +4,7 @@ from pathlib import Path
 from family import Family
 from payment import Payment
 from typing import List, Set
-from pay_check import families_with_payments
+from matcher import match_families_with_payments
 
 app = typer.Typer()
 
@@ -15,9 +15,23 @@ def mail_invitations():
     guest_list_path = package_root / 'data' / 'guest-list.csv'
     payment_path = package_root / 'data' / 'payment.csv'
     families: Set = Family.from_csv(guest_list_path)
-    payments: List = Payment.from_csv(payment_path)
-    paid_families: Set = families_with_payments(families, payments)
-    unpaid_families: 
+    payments: Set = Payment.from_csv(payment_path)
+    matched_families, matched_payments = match_families_with_payments(families, payments)
+    print("Matched:")
+    print(f"  Payments: {len(matched_payments)}")
+    print(f"  Families: {len(matched_families)}")
+    unmatched_payments = payments - matched_payments
+    unmatched_families = families - matched_families
+    print("Unmatched:")
+    print(f"  Payments: {len(unmatched_payments)}")
+    print(f"  Families: {len(unmatched_families)}")
+
+    print("Payments:")
+    for payment in unmatched_payments:
+        print(payment)
+    print("Families:")
+    for family in unmatched_families:
+        print(family)
 
 if __name__ == "__main__":
     app()

@@ -2,6 +2,7 @@ import csv, phonenumbers
 from dataclasses import dataclass, field
 from typing import List, Set
 from enum import Enum
+from phone import normalize_phone
 
 Meal = Enum("Meal", ["Vegan", "Chicken", "Allergy", "Beef", "Kid-Friendly"])
 
@@ -41,27 +42,18 @@ class Family:
                 if num_tickets > 0:
                     families.add(cls(
                         email=row.get("Email", ''),
-                        phone=normalize_phone(row.get("Phone Number",'')),
+                        phone=normalize_phone(row.get("Phone",'')),
                         guests=guests
                     ))
         return families
 
     def __hash__(self):
-        return hash((self.email, self.phone))
+        return hash(self.email)
 
     def __eq__(self, other):
         if not isinstance(other, Family):
             return False
-        return (self.email, self.phone) == (other.email, other.phone)
-
-def normalize_phone(phone: str, region: str = "US") -> str:
-    try:
-        parsed = phonenumbers.parse(phone, region)
-        if phonenumbers.is_valid_number(parsed):
-            # Return in E.164 format (+countrycode + number)
-            return phonenumbers.format_number(parsed, phonenumbers.PhoneNumberFormat.E164)
-    except phonenumbers.NumberParseException:
-        return ''
+        return self.email == other.email
 
 def coerce_meal(value: str) -> Meal:
     try:
