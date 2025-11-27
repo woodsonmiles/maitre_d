@@ -8,7 +8,8 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "typer (>=0.20.0,<0.21.0)"
+    "typer (>=0.20.0,<0.21.0)",
+    "phonenumbers (>=9.0.19,<10.0.0)"
 ]
 
 [tool.poetry]
@@ -20,3 +21,8 @@ maitre = "cli:app"
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.1,<10.0.0)"
+]
