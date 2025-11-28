@@ -18,6 +18,8 @@ class Guest:
 class Family:
     email: str
     phone: str
+    address: str
+    requests: str
     guests: List[Guest] = field(default_factory=list)
 
     @classmethod
@@ -43,9 +45,27 @@ class Family:
                     families.add(cls(
                         email=row.get("Email", ''),
                         phone=normalize_phone(row.get("Phone",'')),
-                        guests=guests
+                        guests=guests,
+                        address=row["Mailing Address"],
+                        requests=row.get("Additional Requests:", "")
                     ))
         return families
+
+    @classmethod
+    def unique_families(cls, families: Set["Family"]) -> Set["Family"]:
+        seen_phones = set()
+        seen_addresses = set()
+        unique_families = set()
+        for family in families:
+            if family.phone in seen_phones or family.address in seen_addresses:
+                continue  # skip duplicate
+            unique_families.add(family)
+            seen_phones.add(family.phone)
+            seen_addresses.add(family.address)
+        return unique_families
+
+    def oldest_guest(self):
+        return max(self.guests, key=lambda g: g.age)
 
     def __hash__(self):
         return hash(self.email)
