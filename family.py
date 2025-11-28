@@ -3,6 +3,7 @@ from dataclasses import dataclass, field
 from typing import List, Set
 from enum import Enum
 from phone import normalize_phone
+from pathlib import Path
 
 Meal = Enum("Meal", ["Vegan", "Chicken", "Allergy", "Beef", "Kid-Friendly"])
 
@@ -52,7 +53,7 @@ class Family:
         return families
 
     @classmethod
-    def unique_families(cls, families: Set["Family"]) -> Set["Family"]:
+    def unique(cls, families: Set["Family"]) -> Set["Family"]:
         seen_phones = set()
         seen_addresses = set()
         unique_families = set()
@@ -74,6 +75,26 @@ class Family:
         if not isinstance(other, Family):
             return False
         return self.email == other.email
+
+    @classmethod
+    def to_csv(cls, families: List["Family"], filepath: Path) -> None:
+        """Serialize a list of Family objects into a CSV file."""
+        with open(filepath, mode="w", newline="", encoding="utf-8") as csvfile:
+            writer = csv.DictWriter(
+                csvfile,
+                fieldnames=["Email", "Phone", "First Name", "Last Name", "Address", "Tickets"]
+            )
+            writer.writeheader()
+            for fam in families:
+                adult=fam.oldest_guest()
+                writer.writerow({
+                    "Email": fam.email,
+                    "Phone": fam.phone,
+                    "First Name": adult.first_name,
+                    "Last Name": adult.last_name,
+                    "Address": fam.address,
+                    "Tickets": len(fam.guests)
+                })
 
 def coerce_meal(value: str) -> Meal:
     try:
