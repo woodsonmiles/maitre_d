@@ -1,13 +1,15 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 from family import Family
 from typing import List
 import csv
 from pathlib import Path
 
+import payment
+
 @dataclass
 class Invitation:
-    first_name: str
     last_name: str
+    first_name: str
     num_tickets: int
     address: str
 
@@ -26,19 +28,15 @@ class Invitation:
             )
         return invitations
 
-    @classmethod
-    def to_csv(cls, invitations: List["Invitation"], filepath: Path) -> None:
-        """Serialize a list of Invitations into a CSV file."""
+    @staticmethod
+    def to_csv(invitations: List["Invitation"], filepath: Path) -> None:
+        """Write a list of Invitations to a CSV file, sorted by last name."""
+        sorted_invitations = sorted(invitations, key=lambda i: i.last_name)
         with open(filepath, mode="w", newline="", encoding="utf-8") as csvfile:
             writer = csv.DictWriter(
                 csvfile,
-                fieldnames=["First Name", "Last Name", "Tickets", "Address"]
+                fieldnames=asdict(sorted_invitations[0]).keys()
             )
             writer.writeheader()
-            for inv in invitations:
-                writer.writerow({
-                    "First Name": inv.first_name,
-                    "Last Name": inv.last_name,
-                    "Tickets": inv.num_tickets,
-                    "Address": inv.address
-                })
+            for inv in sorted_invitations:
+                writer.writerow(asdict(inv))

@@ -12,7 +12,12 @@ app = typer.Typer()
 
 @app.command()
 def mail_invitations():
-    """Create list of letter to mail with address, number of tickets and name"""
+    """
+    Write three CSVs to working directory
+    invitations.csv
+    unmatched_payments.csv
+    unmatched_families.csv
+    """
     package_root = Path(__file__).parent
     guest_list_path = package_root / 'data' / 'guest-list.csv'
     payment_path = package_root / 'data' / 'payment.csv'
@@ -28,10 +33,16 @@ def mail_invitations():
     print("Unmatched:")
     print(f"  Payments: {len(unmatched_payments)}")
     print(f"  Families: {len(unmatched_families)}")
+    # write out invitations
     invitations: List[Invitation] = Invitation.from_families(list(matched_families))
-
     invitation_file = Path.cwd() / 'invitations.csv'
     Invitation.to_csv(invitations, invitation_file)
+    # write out unmatched payments
+    payments_file = Path.cwd() / 'unmatched_payments.csv'
+    Payment.to_csv(list(unmatched_payments), payments_file)
+    # write out unmatched families
+    families_file = Path.cwd() / 'unmatched_families.csv'
+    Family.to_csv(list(unmatched_families), families_file)
 
 
 

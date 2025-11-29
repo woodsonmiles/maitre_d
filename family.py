@@ -1,4 +1,4 @@
-import csv, phonenumbers
+import csv
 from dataclasses import dataclass, field
 from typing import List, Set
 from enum import Enum
@@ -52,8 +52,8 @@ class Family:
                     ))
         return families
 
-    @classmethod
-    def unique(cls, families: Set["Family"]) -> Set["Family"]:
+    @staticmethod
+    def unique(families: Set["Family"]) -> Set["Family"]:
         seen_phones = set()
         seen_addresses = set()
         unique_families = set()
@@ -76,16 +76,17 @@ class Family:
             return False
         return self.email == other.email
 
-    @classmethod
-    def to_csv(cls, families: List["Family"], filepath: Path) -> None:
+    @staticmethod
+    def to_csv(families: List["Family"], filepath: Path) -> None:
         """Serialize a list of Family objects into a CSV file."""
+        sorted_families = sorted(families, key=lambda f: f.oldest_guest().last_name)
         with open(filepath, mode="w", newline="", encoding="utf-8") as csvfile:
             writer = csv.DictWriter(
                 csvfile,
-                fieldnames=["Email", "Phone", "First Name", "Last Name", "Address", "Tickets"]
+                fieldnames=["Last Name", "First Name", "Email", "Phone", "Tickets", "Address"]
             )
             writer.writeheader()
-            for fam in families:
+            for fam in sorted_families:
                 adult=fam.oldest_guest()
                 writer.writerow({
                     "Email": fam.email,
