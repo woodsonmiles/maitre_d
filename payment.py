@@ -24,7 +24,7 @@ class Payment:
                     order_number=row["Order number"],
                     first_name=row["Guest first name"],
                     last_name=row["Guest last name"],
-                    email=row["Email"],
+                    email=row["Email"].lower(),
                     phone=normalize_phone(row.get("Phone Number",'')),
                 ))
         return payments

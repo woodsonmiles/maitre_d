@@ -31,9 +31,9 @@ class Family:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 guests = []
-                num_tickets=int(row["Tickets"])
+                num_tickets=int(row["Tickets"])                
                 for ticket in range(1, num_tickets+1):
-                    first_name = row.get(f"First Name (Ticket {ticket})")
+                    first_name = row[f"First Name (Ticket {ticket})"]
                     if first_name:
                         guests.append(Guest(
                             first_name=first_name,
@@ -44,7 +44,7 @@ class Family:
                         ))
                 if num_tickets > 0:
                     families.add(cls(
-                        email=row.get("Email", ''),
+                        email=row.get("Email", '').lower(),
                         phone=normalize_phone(row.get("Phone",'')),
                         guests=guests,
                         address=row["Mailing Address"],
@@ -66,7 +66,7 @@ class Family:
         return unique_families
 
     def oldest_guest(self):
-        return max(self.guests, key=lambda g: g.age)
+        return self.guests[0]
 
     def __hash__(self):
         return hash(self.email)

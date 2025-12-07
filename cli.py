@@ -22,6 +22,8 @@ def mail_invitations():
     guest_list_path = package_root / 'data' / 'guest-list.csv'
     payment_path = package_root / 'data' / 'payment.csv'
     families: Set = Family.from_csv(guest_list_path)
+    # for family in families:
+    #     print(family)
     unique_families: Set = Family.unique(families)
     payments: Set = Payment.from_csv(payment_path)
     matched_families, matched_payments = match_families_with_payments(families=unique_families, payments=payments)

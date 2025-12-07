@@ -9,7 +9,8 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "typer (>=0.20.0,<0.21.0)",
-    "phonenumbers (>=9.0.19,<10.0.0)"
+    "phonenumbers (>=9.0.19,<10.0.0)",
+    "usaddress (>=0.5.16,<0.6.0)"
 ]
 
 [tool.poetry]
