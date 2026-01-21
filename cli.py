@@ -1,6 +1,5 @@
 # cli.py
 import typer
-import os
 from pathlib import Path
 from family import Family
 from payment import Payment
@@ -46,7 +45,25 @@ def mail_invitations():
     families_file = Path.cwd() / 'unmatched_families.csv'
     Family.to_csv(list(unmatched_families), families_file)
 
+@app.command()
+def assign_tables():
+    """
+    Write a CSV of guests assigned to tables
+    Earliest reservations take priority in seating requests
+    """
+    package_root = Path(__file__).parent
+    guest_list_path = package_root / 'data' / 'guest-list.csv'
+    families: Set = Family.from_csv(guest_list_path)
+    unique_families: Set = Family.unique(families)
+    # sort by submission time
+    sorted_families: List = sorted(unique_families, key=lambda family: family.submission)
 
+    # for each family, for each request,
+    # add requested families until either there are no more requests or the table is full
+    # requested families
+
+    # build list of tables satisfying requests
+    # A table is simply a list of up to 10 guests
 
 
 if __name__ == "__main__":

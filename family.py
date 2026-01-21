@@ -2,6 +2,9 @@ import csv
 from dataclasses import dataclass, field
 from typing import List, Set
 from enum import Enum
+from datetime import datetime
+
+from click import DateTime
 from phone import normalize_phone
 from pathlib import Path
 
@@ -21,6 +24,7 @@ class Family:
     phone: str
     address: str
     requests: str
+    submission: datetime
     guests: List[Guest] = field(default_factory=list)
 
     @classmethod
@@ -48,7 +52,9 @@ class Family:
                         phone=normalize_phone(row.get("Phone",'')),
                         guests=guests,
                         address=row["Mailing Address"],
-                        requests=row.get("Additional Requests:", "")
+                        requests=row.get("Additional Requests:", ""),
+                        submission=datetime.fromisoformat(row["Submission time"])
+
                     ))
         return families
 
