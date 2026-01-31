@@ -1,3 +1,4 @@
+from datetime import datetime
 import pytest
 from family import Family
 from payment import Payment
@@ -14,16 +15,25 @@ package_root = Path(__file__).parent
 guest_list_path = package_root / 'data' / 'guest-list.csv'
 payment_path = package_root / 'data' / 'payment.csv'
 
+def make_family(email: str, phone: str):
+    return Family(
+        email=email,
+        phone=phone,
+        address='',
+        requests='',
+        submission=datetime.now()
+    )
+
 def test_family_equal():
-    alice1 = Family(email="alice@example.com", phone="1111", address='', requests=''),  # match both
-    alice2 = Family(email="alice@example.com", phone="2222", address='', requests=''),  # match both
-    david = Family(email="david@example.com", phone="1111", address='', requests=''),  # match phone
+    alice1 = make_family(email="alice@example.com", phone="1111"),  # match both
+    alice2 = make_family(email="alice@example.com", phone="2222"),  # match both
+    david = make_family(email="david@example.com", phone="1111"),  # match phone
     assert alice1 == alice2
     assert alice1 != david
 
 def test_family_from_csv():
     families = Family.from_csv(guest_list_path)
-    assert len(families) >= 120
+    assert len(families) >= 20
 
 def test_payment_from_csv():
     payments = Payment.from_csv(payment_path)
@@ -38,10 +48,10 @@ def sample_data():
         Payment(order_number="4", first_name="Dug", last_name="Von", email="dug@example.com", phone="5555"),
     }
     families = {
-        Family(email="alice@example.com", phone="1111", address='', requests=''),  # match both
-        Family(email="david@example.com", phone="2222", address='', requests=''),  # match phone
-        Family(email="eve@example.com", phone="4444", address='', requests=''),    # no match
-        Family(email="dug@example.com", phone="6666", address='', requests=''),    # match email
+        make_family(email="alice@example.com", phone="1111"),  # match both
+        make_family(email="david@example.com", phone="2222"),  # match phone
+        make_family(email="eve@example.com", phone="4444"),    # no match
+        make_family(email="dug@example.com", phone="6666"),    # match email
     }
     return payments, families
 

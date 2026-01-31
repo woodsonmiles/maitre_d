@@ -1,5 +1,6 @@
 import pytest
 from family import Family, Guest, Meal
+from datetime import datetime
 
 def make_family(email, phone, address):
     # minimal Family factory for testing
@@ -8,6 +9,7 @@ def make_family(email, phone, address):
         phone=phone,
         address=address,
         requests="",
+        submission=datetime.now(),
         guests=[Guest("Test", "User", Meal.Chicken, "", 30)]
     )
 
@@ -16,7 +18,7 @@ def test_unique_families_removes_duplicates_by_phone():
     fam2 = make_family("b@example.com", "123", "Addr2")  # duplicate phone
     families = {fam1, fam2}
 
-    unique = Family.unique_families(families)
+    unique = Family.unique(families)
     assert len(unique) == 1
     assert any(f.phone == "123" for f in unique)
 
@@ -25,7 +27,7 @@ def test_unique_families_removes_duplicates_by_address():
     fam2 = make_family("b@example.com", "222", "SameAddr")  # duplicate address
     families = {fam1, fam2}
 
-    unique = Family.unique_families(families)
+    unique = Family.unique(families)
     assert len(unique) == 1
     assert any(f.address == "SameAddr" for f in unique)
 
@@ -34,12 +36,12 @@ def test_unique_families_keeps_unique_entries():
     fam2 = make_family("b@example.com", "222", "Addr2")
     families = {fam1, fam2}
 
-    unique = Family.unique_families(families)
+    unique = Family.unique(families)
     assert len(unique) == 2
     assert fam1 in unique and fam2 in unique
 
 def test_unique_families_empty_set():
     families = set()
-    unique = Family.unique_families(families)
+    unique = Family.unique(families)
     assert unique == set()
 

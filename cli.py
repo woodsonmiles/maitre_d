@@ -4,8 +4,10 @@ from pathlib import Path
 from family import Family
 from payment import Payment
 from invitation import Invitation
-from typing import Set, List
+from typing import Dict, Set, List
 from matcher import match_families_with_payments
+from seating_chart import create_area_aware_seating
+from seating_requests import extract_families_from_request
 
 app = typer.Typer()
 
@@ -57,13 +59,15 @@ def assign_tables():
     unique_families: Set = Family.unique(families)
     # sort by submission time
     sorted_families: List = sorted(unique_families, key=lambda family: family.submission)
+    last_to_first: Dict = Family.last_to_firstnames(sorted_families)
+    last_to_family: Dict = Family.last_to_family(sorted_families)
 
-    # for each family, for each request,
-    # add requested families until either there are no more requests or the table is full
-    # requested families
+    request_map = {}
+    for family in sorted_families:
+        requests = extract_families_from_request(request_string=family.requests, last_to_firstnames=last_to_first, last_to_families=last_to_family)
+        request_map[family] = requests
 
-    # build list of tables satisfying requests
-    # A table is simply a list of up to 10 guests
+    create_area_aware_seating(families_sorted=sorted_families, requests_map=request_map, table_size=10, debug=True)
 
 
 if __name__ == "__main__":

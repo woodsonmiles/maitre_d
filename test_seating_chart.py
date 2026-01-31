@@ -1,182 +1,178 @@
 import pytest
-
-# Import your seating engine functions here
 from seating_chart import (
     build_clusters,
-    assign_clusters_to_areas,
+    assign_cluster_to_area,
     place_cluster_into_area,
     generate_conflict_report,
-    visualize_areas,
-    create_area_aware_seating
+    create_area_aware_seating,
 )
 
-# Minimal Family class for testing
-class Family:
-    def __init__(self, last_name, size, requests=None):
-        self.last_name = last_name
-        self.size = size
-        self.requests = requests or []
+# ---------------------------------------------------------
+# Minimal mock Family class for testing
+# ---------------------------------------------------------
 
+class MockFamily:
+    def __init__(self, first, last, size=1, requests=None):
+        self._first = first
+        self._last = last
+        self._size = size
+        self.requests = requests or []  # list[Family]
+    @property
+    def first_name(self):
+        return self._first
+    @property
+    def last_name(self):
+        return self._last
+    @property
+    def size(self):
+        return self._size
     def __repr__(self):
-        return f"Family({self.last_name}, {self.size})"
+        return f"Family({self._first} {self._last}, size={self._size})"
 
 
 # ---------------------------------------------------------
-# CLUSTER TESTS
+# Fixtures
 # ---------------------------------------------------------
 
-def test_cluster_simple():
-    """Two families requesting each other should form a single cluster."""
-    a = Family("Smith", 4, ["Jones"])
-    b = Family("Jones", 3, ["Smith"])
-    families = [a, b]
-    requests = {a: a.requests, b: b.requests}
+@pytest.fixture
+def simple_families():
+    """
+    Smith1 requests Jones.
+    Smith2 requests nobody.
+    Jones requests nobody.
+    """
+    smith1 = MockFamily("John", "Smith", size=4)
+    smith2 = MockFamily("Paul", "Smith", size=3)
+    jones  = MockFamily("Ava", "Jones", size=2)
 
-    clusters = build_clusters(families, requests)
+    # Explicit Family → List[Family] mapping
+    smith1.requests = [jones]
+    smith2.requests = []
+    jones.requests  = []
 
-    assert len(clusters) == 1
-    assert set(clusters[0]) == {a, b}
-
-
-def test_cluster_disconnected():
-    """Families with no requests should form separate clusters."""
-    a = Family("Smith", 4)
-    b = Family("Jones", 3)
-    families = [a, b]
-    requests = {a: [], b: []}
-
-    clusters = build_clusters(families, requests)
-
-    assert len(clusters) == 2
-
-
-# ---------------------------------------------------------
-# AREA ASSIGNMENT TESTS
-# ---------------------------------------------------------
-
-def test_area_assignment_creates_new_area():
-    """A cluster too large for existing areas should create a new area."""
-    a = Family("Smith", 6)
-    b = Family("Jones", 6)
-    clusters = [[a, b]]
-
-    gen = assign_clusters_to_areas(clusters, tables_per_area=1, table_size=10, debug=False)
-    action, area_index, assigned_cluster = next(gen)
-
-    assert action == "new"
-    assert area_index == 0
-
-
-def test_area_assignment_reuses_area():
-    """A second cluster should reuse an area if capacity allows."""
-    a = Family("Smith", 4)
-    b = Family("Jones", 4)
-    c = Family("Brown", 4)
-
-    clusters = [[a, b], [c]]
-
-    gen = assign_clusters_to_areas(clusters, tables_per_area=2, table_size=10, debug=False)
-    first = next(gen)
-    second = next(gen)
-
-    assert second[0] == "existing"
-    assert second[1] == 0
+    families = [smith1, smith2, jones]
+    request_map = {
+        smith1: [jones],
+        smith2: [],
+        jones:  [],
+    }
+    return families, request_map, smith1, smith2, jones
 
 
 # ---------------------------------------------------------
-# TABLE PLACEMENT TESTS
+# 1. Test cluster building
 # ---------------------------------------------------------
 
-def test_table_placement_respects_requests():
-    """Families should be placed near requested families when possible."""
-    a = Family("Smith", 4, ["Jones"])
-    b = Family("Jones", 4)
+def test_build_clusters(simple_families):
+    families, request_map, smith1, smith2, jones = simple_families
+
+    clusters = build_clusters(families, request_map)
+
+    # smith1 ↔ jones form a connected component
+    assert any(set(cluster) == {smith1, jones} for cluster in clusters)
+
+    # smith2 is isolated
+    assert any(cluster == [smith2] for cluster in clusters)
+
+
+# ---------------------------------------------------------
+# 2. Test cluster → area assignment
+# ---------------------------------------------------------
+
+def test_assign_cluster_to_area(simple_families):
+    families, request_map, smith1, smith2, jones = simple_families
+
+    areas = {}
+    area_used = {}
+
+    # First cluster (smith1 + jones)
+    cluster1 = [smith1, jones]
+    area_idx = assign_cluster_to_area(cluster1, areas, area_used, table_size=10, debug=False)
+    assert area_idx == 0
+
+    # Add the area to simulate placement
+    areas[0] = []
+    area_used[0] = smith1.size + jones.size  # 6 seats used
+
+    # Second cluster (smith2) should fit into area 0 (remaining 4 seats)
+    cluster2 = [smith2]
+    area_idx2 = assign_cluster_to_area(cluster2, areas, area_used, table_size=10, debug=False)
+    assert area_idx2 == 0
+
+
+# ---------------------------------------------------------
+# 3. Test table placement
+# ---------------------------------------------------------
+
+def test_place_cluster_into_area(simple_families):
+    families, request_map, smith1, smith2, jones = simple_families
 
     area_tables = []
-    place_cluster_into_area([b, a], area_tables, table_size=10, tables_per_area=3, debug=False)
+    place_cluster_into_area([smith1, jones], area_tables, table_size=10, debug=False)
 
-    # Smith should be placed at the same table as Jones
-    assert area_tables[0] == [b, a]
+    # smith1 (4) + jones (2) fit at same table
+    assert area_tables[0] == [smith1, jones]
 
 
-def test_table_overflow_moves_to_next_table():
-    """Families should overflow to the next table when one is full."""
-    a = Family("A", 10)
-    b = Family("B", 10)
+def test_place_cluster_creates_new_table(simple_families):
+    families, request_map, smith1, smith2, jones = simple_families
 
     area_tables = []
-    place_cluster_into_area([a, b], area_tables, table_size=10, tables_per_area=3, debug=False)
+    # smith1 (4) + smith2 (3) fit at table 0
+    place_cluster_into_area([smith1, smith2], area_tables, table_size=6, debug=False)
 
-    assert area_tables[0] == [a]
-    assert area_tables[1] == [b]
+    # smith1 (4) fits, smith2 (3) does not → new table
+    assert area_tables[0] == [smith1]
+    assert area_tables[1] == [smith2]
 
 
 # ---------------------------------------------------------
-# CONFLICT REPORT TESTS
+# 4. Test conflict report
 # ---------------------------------------------------------
 
-def test_conflict_report_detects_unmet_requests():
-    """Families not seated in the same area as requested families should appear in conflict report."""
-    a = Family("Smith", 4, ["Jones"])
-    b = Family("Jones", 4)
+def test_conflict_report(simple_families):
+    families, request_map, smith1, smith2, jones = simple_families
 
+    # smith1 requests jones, but they are in different areas
     areas = {
-        0: [[a]],   # Area 0
-        1: [[b]]    # Area 1
+        0: [[smith1]],
+        1: [[jones]],
     }
 
-    requests = {a: a.requests, b: b.requests}
-    conflicts = generate_conflict_report(areas, requests)
-
+    conflicts = generate_conflict_report(areas, request_map)
     assert len(conflicts) == 1
-    fam, last, reason = conflicts[0]
-    assert fam == a
-    assert last == "Jones"
+    fam, other, reason = conflicts[0]
+    assert fam == smith1
+    assert other == jones
+    assert reason == "Not seated in same area"
 
 
 # ---------------------------------------------------------
-# VISUALIZATION TESTS
+# 5. Test full pipeline
 # ---------------------------------------------------------
 
-def test_visualization_format():
-    """Visualization should contain area and table headers."""
-    a = Family("Smith", 4)
-    areas = {0: [[a]]}
-
-    layout = visualize_areas(areas)
-
-    assert "AREA 0" in layout
-    assert "Table 0" in layout
-    assert "Smith" in layout
-
-
-# ---------------------------------------------------------
-# FULL PIPELINE TEST
-# ---------------------------------------------------------
-
-def test_full_pipeline():
-    """End-to-end test of the full seating engine."""
-    a = Family("Smith", 4, ["Jones"])
-    b = Family("Jones", 4)
-    c = Family("Brown", 4)
-
-    families_sorted = [a, b, c]
-    requests = {a: a.requests, b: b.requests, c: c.requests}
+def test_full_pipeline(simple_families):
+    families, request_map, smith1, smith2, jones = simple_families
 
     areas, conflicts, layout = create_area_aware_seating(
-        families_sorted,
-        requests,
+        families_sorted=families,
+        requests_map=request_map,
         table_size=10,
-        tables_per_area=2,
-        debug=False
+        debug=False,
     )
 
-    # Smith and Jones should be in the same area
-    smith_area = next(idx for idx, tables in areas.items() if a in sum(tables, []))
-    jones_area = next(idx for idx, tables in areas.items() if b in sum(tables, []))
-
+    # smith1 and jones should be in same area
+    smith_area = next(a for a, tables in areas.items() if smith1 in sum(tables, []))
+    jones_area = next(a for a, tables in areas.items() if jones in sum(tables, []))
     assert smith_area == jones_area
 
-    # Layout should not be empty
-    assert len(layout) > 0
+    # smith2 should also fit into area 0 (remaining space)
+    smith2_area = next(a for a, tables in areas.items() if smith2 in sum(tables, []))
+    assert smith2_area == smith_area
 
+    # No conflicts expected
+    assert conflicts == []
+
+    # Layout should contain names
+    assert "Smith" in layout
+    assert "Jones" in layout

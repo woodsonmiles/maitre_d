@@ -1,10 +1,10 @@
 import csv
 from dataclasses import dataclass, field
-from typing import List, Set
+from typing import Dict, List, Set
 from enum import Enum
 from datetime import datetime
+from collections import defaultdict
 
-from click import DateTime
 from phone import normalize_phone
 from pathlib import Path
 
@@ -27,11 +27,37 @@ class Family:
     submission: datetime
     guests: List[Guest] = field(default_factory=list)
 
+    @property
+    def first_name(self):
+        return self.guests[0].first_name
+
+    @property
+    def last_name(self):
+        return self.guests[0].last_name
+
+    @property
+    def size(self):
+        return len(self.guests)
+
+    def oldest_guest(self):
+        return self.guests[0]
+
+    def __repr__(self) -> str:
+        return f"Family({self.email})"
+
+    def __hash__(self):
+        return hash(self.email)
+
+    def __eq__(self, other):
+        if not isinstance(other, Family):
+            return False
+        return self.email == other.email
+
     @classmethod
     def from_csv(cls, filepath) ->Set["Family"]:
         """Deserialize a CSV file into a list of Families"""
         families = set()
-        with open(filepath, newline="", encoding="utf-8") as csvfile:
+        with open(filepath, newline="", encoding="utf-8-sig") as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 guests = []
@@ -71,16 +97,7 @@ class Family:
             seen_addresses.add(family.address)
         return unique_families
 
-    def oldest_guest(self):
-        return self.guests[0]
 
-    def __hash__(self):
-        return hash(self.email)
-
-    def __eq__(self, other):
-        if not isinstance(other, Family):
-            return False
-        return self.email == other.email
 
     @staticmethod
     def to_csv(families: List["Family"], filepath: Path) -> None:
@@ -102,6 +119,22 @@ class Family:
                     "Address": fam.address,
                     "Tickets": len(fam.guests)
                 })
+
+    @staticmethod
+    def last_to_firstnames(families: List["Family"]) -> Dict:
+        """Return map of family last name (Dad's) to Dad's first name"""
+        last_to_first = defaultdict(list)
+        for family in families:
+            last_to_first[family.last_name].append(family.first_name)
+        return last_to_first
+
+    @staticmethod
+    def last_to_family(families: List["Family"]) -> Dict:
+        """Return map of family last name (Dad's) to Dad's first name"""
+        last_to_family = defaultdict(list)
+        for family in families:
+            last_to_family[family.last_name].append(family)
+        return last_to_family
 
 def coerce_meal(value: str) -> Meal:
     try:
