@@ -53,6 +53,12 @@ class Family:
             return False
         return self.email == other.email
 
+    def to_dict(self) -> Dict:
+        return {
+            "email": self.email,
+            "size": self.size
+        }
+
     @classmethod
     def from_csv(cls, filepath) ->Set["Family"]:
         """Deserialize a CSV file into a list of Families"""

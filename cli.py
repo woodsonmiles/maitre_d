@@ -8,6 +8,7 @@ from typing import Dict, Set, List
 from matcher import match_families_with_payments
 from seating_chart import create_area_aware_seating
 from seating_requests import extract_families_from_request
+from write_seating_results import write_seating_results
 
 app = typer.Typer()
 
@@ -67,7 +68,10 @@ def assign_tables():
         requests = extract_families_from_request(request_string=family.requests, last_to_firstnames=last_to_first, last_to_families=last_to_family)
         request_map[family] = requests
 
-    create_area_aware_seating(families_sorted=sorted_families, requests_map=request_map, table_size=10, debug=True)
+    areas, conflicts, layout = create_area_aware_seating(families_sorted=sorted_families, requests_map=request_map, table_size=10, debug=True)
+    areas_path = Path.cwd() / 'areas.yaml'
+    conflicts_path = Path.cwd() / 'conflicts.yaml'
+    write_seating_results(areas, conflicts, layout, areas_path, conflicts_path)
 
 
 if __name__ == "__main__":

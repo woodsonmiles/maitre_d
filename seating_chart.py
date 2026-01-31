@@ -6,44 +6,48 @@ Core seating engine for assigning families to tables and areas.
 Architecture:
 ------------
 1. seating_requests.py parses messy human text into:
-       Family → List[Family]
-   This is the ONLY place where fuzzy matching or heuristics occur.
+       Dict[Family, List[Family]]
+   (explicit, unambiguous request graph).
 
-2. seating_chart.py receives a clean, unambiguous request graph and:
+2. seating_chart.py receives that graph and:
    - Builds clusters (connected components)
    - Assigns clusters to areas (cluster-level bin packing)
    - Places families into tables (family-level bin packing)
    - Generates conflict reports
    - Produces a human-readable layout
-
-This file contains NO fuzzy matching, NO string parsing, and NO heuristics.
-It operates purely on Family objects and explicit relationships.
 """
 
+from __future__ import annotations
+
 from collections import defaultdict, deque
+from typing import Dict, List, Tuple, DefaultDict
 import math
+from family import Family
+
+
+# You have a concrete Family class elsewhere; we just rely on its interface:
+# - first_name: str
+# - last_name: str
+# - size: int
+# - to_dict(): dict
 
 
 # =========================================================
 # 1. BUILD CLUSTERS (CONNECTED COMPONENTS)
 # =========================================================
 
-def build_clusters(families, requests_map):
+def build_clusters(
+    families: List["Family"],
+    requests_map: Dict["Family", List["Family"]],
+) -> List[List["Family"]]:
     """
     Build clusters of families based on explicit Family → List[Family] requests.
 
     A cluster is a connected component in the undirected graph where:
         - Nodes are Family objects
         - Edges exist if A requests B or B requests A
-
-    Parameters:
-        families: List[Family]
-        requests_map: Dict[Family, List[Family]]
-
-    Returns:
-        List[List[Family]] — each inner list is a cluster
     """
-    graph = defaultdict(set)
+    graph: DefaultDict["Family", set["Family"]] = defaultdict(set)
 
     # Build undirected edges
     for fam in families:
@@ -51,17 +55,17 @@ def build_clusters(families, requests_map):
             graph[fam].add(other)
             graph[other].add(fam)
 
-    visited = set()
-    clusters = []
+    visited: set["Family"] = set()
+    clusters: List[List["Family"]] = []
 
     # BFS to find connected components
     for fam in families:
         if fam in visited:
             continue
 
-        queue = deque([fam])
+        queue: deque["Family"] = deque([fam])
         visited.add(fam)
-        cluster = [fam]
+        cluster: List["Family"] = [fam]
 
         while queue:
             cur = queue.popleft()
@@ -80,7 +84,13 @@ def build_clusters(families, requests_map):
 # 2. ASSIGN CLUSTERS TO AREAS (CLUSTER-LEVEL BIN PACKING)
 # =========================================================
 
-def assign_cluster_to_area(cluster, areas, area_used, table_size, debug=True):
+def assign_cluster_to_area(
+    cluster: List["Family"],
+    areas: Dict[int, List[List["Family"]]],
+    area_used: Dict[int, int],
+    table_size: int,
+    debug: bool = True,
+) -> int:
     """
     Decide which area a cluster should be placed into.
 
@@ -95,14 +105,14 @@ def assign_cluster_to_area(cluster, areas, area_used, table_size, debug=True):
             f"(size {cluster_size}) ==="
         )
 
-    best_area = None
-    best_extra = None
-    best_remaining = None
+    best_area: int | None = None
+    best_extra: int | None = None
+    best_remaining: int | None = None
 
     # Evaluate existing areas
     for area_idx, tables in areas.items():
         num_tables = len(tables)
-        used = area_used[area_idx]
+        used = area_used.get(area_idx, 0)
         capacity = num_tables * table_size
         remaining = capacity - used
 
@@ -111,11 +121,17 @@ def assign_cluster_to_area(cluster, areas, area_used, table_size, debug=True):
         else:
             extra = math.ceil((cluster_size - remaining) / table_size)
 
+        if debug:
+            print(
+                f"  Area {area_idx}: tables={num_tables}, used={used}, "
+                f"remaining={remaining}, extra_tables_needed={extra}"
+            )
+
         if best_extra is None or extra < best_extra:
             best_area = area_idx
             best_extra = extra
             best_remaining = remaining
-        elif extra == best_extra and remaining > best_remaining:
+        elif extra == best_extra and best_remaining is not None and remaining > best_remaining:
             best_area = area_idx
             best_remaining = remaining
 
@@ -123,20 +139,30 @@ def assign_cluster_to_area(cluster, areas, area_used, table_size, debug=True):
     new_area_idx = len(areas)
     extra_new = math.ceil(cluster_size / table_size)
 
-    if best_area is None or extra_new < best_extra:
+    if debug:
+        print(f"  New Area {new_area_idx}: extra_tables_needed={extra_new}")
+
+    if best_area is None or extra_new < best_extra:  # type: ignore[arg-type]
         if debug:
             print(f"→ Choosing NEW Area {new_area_idx}")
         return new_area_idx
 
     if debug:
         print(f"→ Choosing EXISTING Area {best_area}")
-    return best_area
+    return best_area  # type: ignore[return-value]
+
 
 # =========================================================
 # 3. PLACE CLUSTER INTO AREA TABLES (FAMILY-LEVEL BIN PACKING)
 # =========================================================
 
-def place_cluster_into_area(cluster, area_tables, table_size, debug=True):
+def place_cluster_into_area(
+    cluster: List["Family"],
+    area_tables: List[List["Family"]],
+    table_size: int,
+    requests_map: Dict["Family", List["Family"]],
+    debug: bool = True,
+) -> None:
     """
     Place all families in a cluster into the tables of a given area.
 
@@ -144,18 +170,13 @@ def place_cluster_into_area(cluster, area_tables, table_size, debug=True):
     ------
     - Families must NOT be split across tables unless size > table_size.
     - Try to reuse existing tables when possible.
-    - Prefer tables that already contain requested families.
+    - Prefer tables that already contain requested families (using requests_map).
     - Create new tables only when necessary.
-
-    Parameters:
-        cluster: List[Family]
-        area_tables: List[List[Family]]
-        table_size: int
     """
     if not area_tables:
         area_tables.append([])
 
-    table_used = [sum(f.size for f in table) for table in area_tables]
+    table_used: List[int] = [sum(f.size for f in table) for table in area_tables]
 
     for fam in cluster:
         if debug:
@@ -175,8 +196,10 @@ def place_cluster_into_area(cluster, area_tables, table_size, debug=True):
             table_used.append(fam.size)
             continue
 
+        requested_families = set(requests_map.get(fam, []))
+
         # Try to place near requested families
-        best_table = None
+        best_table: int | None = None
         best_score = -1
 
         for i, table in enumerate(area_tables):
@@ -184,7 +207,7 @@ def place_cluster_into_area(cluster, area_tables, table_size, debug=True):
             if remaining < fam.size:
                 continue
 
-            score = sum(1 for other in table if other in fam.requests)
+            score = sum(1 for other in table if other in requested_families)
 
             if score > best_score:
                 best_score = score
@@ -224,20 +247,19 @@ def place_cluster_into_area(cluster, area_tables, table_size, debug=True):
 # 4. CONFLICT REPORT
 # =========================================================
 
-def generate_conflict_report(areas, requests_map):
+def generate_conflict_report(
+    areas: Dict[int, List[List["Family"]]],
+    requests_map: Dict["Family", List["Family"]],
+) -> List[Tuple["Family", "Family", str]]:
     """
     Generate a list of unmet seating requests.
 
-    A request is satisfied if:
-        - The requested family is seated in the same AREA.
-
-    Returns:
-        List[(fam, requested_fam, reason)]
+    A request is satisfied if the requested family is seated in the same AREA.
     """
-    conflicts = []
+    conflicts: List[Tuple["Family", "Family", str]] = []
 
     # Build lookup: family → (area, table)
-    location = {}
+    location: Dict["Family", Tuple[int, int]] = {}
     for area_idx, tables in areas.items():
         for table_idx, table in enumerate(tables):
             for fam in table:
@@ -262,11 +284,11 @@ def generate_conflict_report(areas, requests_map):
 # 5. VISUALIZATION
 # =========================================================
 
-def visualize_areas(areas):
+def visualize_areas(areas: Dict[int, List[List["Family"]]]) -> str:
     """
     Produce a human-readable string representation of areas and tables.
     """
-    output = []
+    output: List[str] = []
     for area_idx, tables in areas.items():
         output.append(f"\n==================== AREA {area_idx} ====================")
         for t_idx, table in enumerate(tables):
@@ -283,39 +305,32 @@ def visualize_areas(areas):
 # =========================================================
 
 def create_area_aware_seating(
-    families_sorted,
-    requests_map,
-    table_size=10,
-    debug=True,
-):
+    families_sorted: List["Family"],
+    requests_map: Dict["Family", List["Family"]],
+    table_size: int = 10,
+    debug: bool = True,
+) -> Tuple[Dict[int, List[List["Family"]]], List[Tuple["Family", "Family", str]], str]:
     """
     Full seating pipeline.
 
-    Steps:
-    ------
-    1. Build clusters (connected components).
-    2. Sort clusters by first appearance in families_sorted.
-    3. For each cluster:
-         - Choose an area (cluster-level bin packing).
-         - Place families into tables (family-level bin packing).
-    4. Generate conflict report.
-    5. Produce layout.
-
     Returns:
-        areas, conflicts, layout
+        areas: Dict[int, List[List[Family]]]
+        conflicts: List[(Family, Family, str)]
+        layout: str
     """
     if debug:
         print("\n==================== BUILDING CLUSTERS ====================")
 
     clusters = build_clusters(families_sorted, requests_map)
 
+    # Keep cluster order consistent with original family order
     clusters.sort(key=lambda c: families_sorted.index(c[0]))
 
     if debug:
         print("\n==================== ASSIGNING CLUSTERS TO AREAS ====================")
 
-    areas = defaultdict(list)
-    area_used = defaultdict(int)
+    areas: DefaultDict[int, List[List["Family"]]] = defaultdict(list)
+    area_used: Dict[int, int] = defaultdict(int)
 
     for cluster in clusters:
         area_idx = assign_cluster_to_area(
@@ -328,7 +343,13 @@ def create_area_aware_seating(
                 f"assigned to Area {area_idx}"
             )
 
-        place_cluster_into_area(cluster, areas[area_idx], table_size, debug)
+        place_cluster_into_area(
+            cluster,
+            areas[area_idx],
+            table_size,
+            requests_map=requests_map,
+            debug=debug,
+        )
 
         area_used[area_idx] += sum(f.size for f in cluster)
 
