@@ -25,6 +25,7 @@ class Family:
     address: str
     requests: str
     submission: datetime
+    part: int = 0  # used to distinquish fragments of an oversized family
     guests: List[Guest] = field(default_factory=list)
 
     @property
@@ -43,15 +44,24 @@ class Family:
         return self.guests[0]
 
     def __repr__(self) -> str:
+        # Include part only when non-zero for readability
+        if getattr(self, "part", 0) != 0:
+            return f"Family({self.email}, part={self.part})"
         return f"Family({self.email})"
 
-    def __hash__(self):
-        return hash(self.email)
 
-    def __eq__(self, other):
+    def __hash__(self) -> int:
+        # Identity is (email, part)
+        return hash((self.email, getattr(self, "part", 0)))
+
+
+    def __eq__(self, other) -> bool:
         if not isinstance(other, Family):
             return False
-        return self.email == other.email
+        return (
+            self.email == other.email
+            and getattr(self, "part", 0) == getattr(other, "part", 0)
+        )
 
     def to_dict(self) -> Dict:
         return {

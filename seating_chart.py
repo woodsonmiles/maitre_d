@@ -22,6 +22,7 @@ from __future__ import annotations
 from collections import defaultdict, deque
 from typing import Dict, List, Tuple, DefaultDict
 import math
+from math import ceil
 from family import Family
 
 
@@ -93,6 +94,7 @@ def assign_cluster_to_area(
 ) -> int:
     """
     Decide which area a cluster should be placed into.
+    If placing a cluster requires creating a new table in an existing area, put it in a new area instead.
 
     Returns:
         area_index (int)
@@ -106,7 +108,7 @@ def assign_cluster_to_area(
         )
 
     best_area: int | None = None
-    best_extra: int | None = None
+    best_extra: float | None = None
     best_remaining: int | None = None
 
     # Evaluate existing areas
@@ -119,7 +121,8 @@ def assign_cluster_to_area(
         if remaining >= cluster_size:
             extra = 0
         else:
-            extra = math.ceil((cluster_size - remaining) / table_size)
+            # This area cannot accept the cluster without adding tables
+            extra = float("inf")
 
         if debug:
             print(
@@ -164,50 +167,33 @@ def place_cluster_into_area(
     debug: bool = True,
 ) -> None:
     """
-    Place all families in a cluster into the tables of a given area.
+    Place all families in a (possibly split) cluster into tables.
 
-    Rules:
-    ------
-    - Families must NOT be split across tables unless size > table_size.
-    - Try to reuse existing tables when possible.
-    - Prefer tables that already contain requested families (using requests_map).
-    - Create new tables only when necessary.
+    Since oversized families have already been split into table-sized chunks,
+    this function becomes a pure bin-packing routine with adjacency scoring.
     """
-    if not area_tables:
-        area_tables.append([])
+    if debug:
+        print(f"  Placing cluster of {len(cluster)} families")
 
-    table_used: List[int] = [sum(f.size for f in table) for table in area_tables]
+    # Track used seats per table
+    table_used = [sum(f.size for f in table) for table in area_tables]
 
     for fam in cluster:
         if debug:
-            print(
-                f"  Placing family {fam.first_name} {fam.last_name} "
-                f"(size {fam.size})"
-            )
+            print(f"    Placing {fam.last_name} (size {fam.size}, part={fam.part})")
 
-        # Oversized family (rare)
-        if fam.size > table_size:
-            if debug:
-                print(
-                    f"    WARNING: family size {fam.size} exceeds table_size "
-                    f"{table_size}; placing at its own table."
-                )
-            area_tables.append([fam])
-            table_used.append(fam.size)
-            continue
+        requested = set(requests_map.get(fam, []))
 
-        requested_families = set(requests_map.get(fam, []))
-
-        # Try to place near requested families
-        best_table: int | None = None
+        best_table = None
         best_score = -1
 
+        # Try to place near requested families
         for i, table in enumerate(area_tables):
             remaining = table_size - table_used[i]
             if remaining < fam.size:
                 continue
 
-            score = sum(1 for other in table if other in requested_families)
+            score = sum(1 for other in table if other in requested)
 
             if score > best_score:
                 best_score = score
@@ -215,10 +201,7 @@ def place_cluster_into_area(
 
         if best_table is not None:
             if debug:
-                print(
-                    f"    → Placed at Table {best_table} "
-                    f"(matched {best_score} requested families)"
-                )
+                print(f"      → Placed at table {best_table} (score {best_score})")
             area_tables[best_table].append(fam)
             table_used[best_table] += fam.size
             continue
@@ -228,7 +211,7 @@ def place_cluster_into_area(
         for i, used in enumerate(table_used):
             if used + fam.size <= table_size:
                 if debug:
-                    print(f"    → No request matches; placed at Table {i}")
+                    print(f"      → Placed at table {i} (first fit)")
                 area_tables[i].append(fam)
                 table_used[i] += fam.size
                 placed = True
@@ -238,10 +221,62 @@ def place_cluster_into_area(
         if not placed:
             new_idx = len(area_tables)
             if debug:
-                print(f"    → No table had space; created new Table {new_idx}")
+                print(f"      → Created new table {new_idx}")
             area_tables.append([fam])
             table_used.append(fam.size)
 
+# split families bigger than tables into multiple families in the same cluster of requests
+def split_oversized_families(
+    cluster: List["Family"],
+    table_size: int,
+    requests_map: Dict["Family", List["Family"]],
+) -> List["Family"]:
+    """
+    Replace any oversized families in the cluster with multiple sub-families
+    whose sizes do not exceed table_size.
+
+    Each sub-family:
+      - has the same first/last name
+      - has a unique `part` index (0, 1, 2, ...)
+      - inherits the original family's requests
+      - stays in the same cluster
+
+    Returns:
+        A new list of Family objects (original or split).
+    """
+    new_cluster: List["Family"] = []
+
+    for fam in cluster:
+        if fam.size <= table_size:
+            # Normal family, keep as-is
+            new_cluster.append(fam)
+            continue
+
+        # Oversized family → split into parts
+        parts_needed = ceil(fam.size / table_size)
+        remaining = fam.size
+
+        for part_idx in range(parts_needed):
+            part_size = min(table_size, remaining)
+            remaining -= part_size
+
+            # Create a new Family object with part index
+            fam_part = Family(
+                email=fam.email,
+                phone=fam.phone,
+                address=fam.address,
+                requests=fam.requests,
+                submission=fam.submission,
+                guests=fam.guests[:part_size],  # or generate placeholder guests
+                part=part_idx,
+            )
+
+            new_cluster.append(fam_part)
+
+            # Propagate requests: each sub-family inherits the same request list
+            requests_map[fam_part] = requests_map.get(fam, [])
+
+    return new_cluster
 
 # =========================================================
 # 4. CONFLICT REPORT
@@ -299,6 +334,24 @@ def visualize_areas(areas: Dict[int, List[List["Family"]]]) -> str:
                 )
     return "\n".join(output)
 
+def visualize_clusters(clusters: list[list["Family"]]) -> None:
+    """
+    Pretty-print clusters when debug mode is enabled.
+    Each cluster is shown with its families, including part numbers.
+    """
+    print("\n=== CLUSTERS ===")
+    for idx, cluster in enumerate(clusters):
+        print(f"Cluster {idx} ({len(cluster)} families):")
+        for fam in cluster:
+            part = getattr(fam, "part", 0)
+            if part:
+                print(f"  - {fam.first_name} {fam.last_name} (size={fam.size}, part={part})")
+            else:
+                print(f"  - {fam.first_name} {fam.last_name} (size={fam.size})")
+        print()
+    print("================\n")
+
+
 
 # =========================================================
 # 6. FULL PIPELINE
@@ -318,16 +371,15 @@ def create_area_aware_seating(
         conflicts: List[(Family, Family, str)]
         layout: str
     """
-    if debug:
-        print("\n==================== BUILDING CLUSTERS ====================")
+    print("\n==================== CLUSTERS ====================")
 
     clusters = build_clusters(families_sorted, requests_map)
+    visualize_clusters(clusters)
 
     # Keep cluster order consistent with original family order
     clusters.sort(key=lambda c: families_sorted.index(c[0]))
 
-    if debug:
-        print("\n==================== ASSIGNING CLUSTERS TO AREAS ====================")
+    print("\n==================== AREAS ====================")
 
     areas: DefaultDict[int, List[List["Family"]]] = defaultdict(list)
     area_used: Dict[int, int] = defaultdict(int)

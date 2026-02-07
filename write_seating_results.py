@@ -1,6 +1,7 @@
 import yaml
+from pathlib import Path
 
-def write_seating_results(areas, conflicts, layout, areas_path="areas.yaml", conflicts_path="conflicts.yaml"):
+def write_seating_results(areas, conflicts, layout, areas_path: Path, conflicts_path: Path):
     """
     Writes seating results to YAML files and prints the human-readable layout.
 
