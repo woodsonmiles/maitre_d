@@ -57,11 +57,10 @@ def mail_invitations():
 def assign_tables():
     """
     Write a CSV of guests assigned to tables
-    Earliest reservations take priority in seating requests
     """
     matched_families = match_families()
-    # sort by submission time
-    sorted_families: List = sorted(matched_families, key=lambda family: family.submission)
+    # sort by age
+    sorted_families: List = sorted(matched_families, key=lambda family: family.mean_daughter_age)
     last_to_first: Dict = Family.last_to_firstnames(sorted_families)
     last_to_family: Dict = Family.last_to_family(sorted_families)
 

@@ -4,6 +4,7 @@ from typing import Dict, List, Set
 from enum import Enum
 from datetime import datetime
 from collections import defaultdict
+from statistics import mean
 
 from phone import normalize_phone
 from pathlib import Path
@@ -39,6 +40,13 @@ class Family:
     @property
     def size(self):
         return len(self.guests)
+
+    @property
+    def mean_daughter_age(self):
+        if len(self.guests) < 2:
+            return 100
+        ages = [g.age for g in self.guests[1:]]
+        return mean(ages)
 
     def oldest_guest(self):
         return self.guests[0]
@@ -84,7 +92,7 @@ class Family:
                         guests.append(Guest(
                             first_name=first_name,
                             last_name=row.get(f"Last Name (Ticket {ticket})", ''),
-                            age=int(row.get(f"Age (Ticket {ticket})") or 0),
+                            age=int(row.get(f"Age (Ticket {ticket})") or 100),
                             meal_choice=coerce_meal(row.get(f"Meal Choice (Ticket {ticket})", "Chicken")),
                             allergies=row.get(f"List Allergies (Ticket {ticket})", '')
                         ))

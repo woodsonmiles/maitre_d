@@ -2,46 +2,30 @@ import yaml
 from pathlib import Path
 
 def write_seating_results(areas, conflicts, layout, areas_path: Path, conflicts_path: Path):
-    """
-    Writes seating results to YAML files and prints the human-readable layout.
-
-    Parameters:
-        areas (dict[int, list[list[Family]]]):
-            Mapping of area index → list of tables → list of Family objects.
-
-        conflicts (list[(Family, Family, str)]):
-            List of unmet seating requests.
-
-        layout (str):
-            Human-readable seating layout (printed to screen).
-
-        areas_path (str):
-            Output path for serialized areas YAML.
-
-        conflicts_path (str):
-            Output path for serialized conflicts YAML.
-    """
-
-    # ----------------------------------------------------
-    # 1. Print layout to screen
-    # ----------------------------------------------------
     print("\n==================== SEATING LAYOUT ====================")
     print(layout)
     print("========================================================\n")
 
     # ----------------------------------------------------
-    # 2. Convert areas to serializable form
+    # 1. Build nested structure: areas → global tables
     # ----------------------------------------------------
-    areas_serializable = {
-        area_idx: [
-            [fam.to_dict() for fam in table]
-            for table in tables
-        ]
-        for area_idx, tables in areas.items()
-    }
+    areas_serializable = {}
+    global_table_id = 0
+
+    for area_idx in sorted(areas.keys()):
+        tables = areas[area_idx]
+
+        # Each area becomes a dict of table_id → families
+        area_map = {}
+
+        for table in tables:
+            area_map[global_table_id] = [fam.to_dict() for fam in table]
+            global_table_id += 1
+
+        areas_serializable[area_idx] = area_map
 
     # ----------------------------------------------------
-    # 3. Convert conflicts to serializable form
+    # 2. Convert conflicts to serializable form
     # ----------------------------------------------------
     conflicts_serializable = [
         {
@@ -53,7 +37,7 @@ def write_seating_results(areas, conflicts, layout, areas_path: Path, conflicts_
     ]
 
     # ----------------------------------------------------
-    # 4. Write YAML files
+    # 3. Write YAML files
     # ----------------------------------------------------
     with open(areas_path, "w") as f:
         yaml.dump(areas_serializable, f, sort_keys=True)
