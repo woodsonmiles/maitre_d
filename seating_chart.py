@@ -86,19 +86,28 @@ def build_clusters(
 # =========================================================
 
 def assign_cluster_to_area(
-    cluster: List["Family"],
-    areas: Dict[int, List[List["Family"]]],
-    area_used: Dict[int, int],
+    cluster: list["Family"],
+    areas: dict[int, list[list["Family"]]],
+    area_used: dict[int, int],
     table_size: int,
     debug: bool = True,
 ) -> int:
     """
     Decide which area a cluster should be placed into.
-    If placing a cluster requires creating a new table in an existing area, put it in a new area instead.
+
+    RULE:
+        A cluster may be placed into an existing area ONLY IF there exists
+        at least one table in that area with enough remaining seats to hold
+        the ENTIRE cluster. We never split a cluster across tables, and we
+        never create new tables inside an existing area.
+
+        If no existing area has a table that can hold the cluster, we must
+        create a NEW area.
 
     Returns:
         area_index (int)
     """
+
     cluster_size = sum(f.size for f in cluster)
 
     if debug:
@@ -108,51 +117,52 @@ def assign_cluster_to_area(
         )
 
     best_area: int | None = None
-    best_extra: float | None = None
-    best_remaining: int | None = None
+    best_remaining: int = -1  # sentinel: "no area chosen yet"
 
+    # ------------------------------------------------------------
     # Evaluate existing areas
+    # ------------------------------------------------------------
     for area_idx, tables in areas.items():
-        num_tables = len(tables)
-        used = area_used.get(area_idx, 0)
-        capacity = num_tables * table_size
-        remaining = capacity - used
 
-        if remaining >= cluster_size:
-            extra = 0
-        else:
-            # This area cannot accept the cluster without adding tables
-            extra = float("inf")
+        # Find the maximum remaining seats in ANY table in this area
+        table_remaining = [
+            table_size - sum(f.size for f in table)
+            for table in tables
+        ]
+
+        # If area has no tables yet, it cannot accept the cluster
+        if not table_remaining:
+            if debug:
+                print(f"  Area {area_idx}: no tables → cannot accept cluster")
+            continue
+
+        max_remaining = max(table_remaining)
 
         if debug:
             print(
-                f"  Area {area_idx}: tables={num_tables}, used={used}, "
-                f"remaining={remaining}, extra_tables_needed={extra}"
+                f"  Area {area_idx}: table_remaining={table_remaining}, "
+                f"max_remaining={max_remaining}"
             )
 
-        if best_extra is None or extra < best_extra:
-            best_area = area_idx
-            best_extra = extra
-            best_remaining = remaining
-        elif extra == best_extra and best_remaining is not None and remaining > best_remaining:
-            best_area = area_idx
-            best_remaining = remaining
+        # Can this area accept the cluster?
+        if max_remaining >= cluster_size:
+            # Prefer the area whose best table has the MOST remaining space
+            if best_area is None or max_remaining > best_remaining:
+                best_area = area_idx
+                best_remaining = max_remaining
 
-    # Consider creating a new area
-    new_area_idx = len(areas)
-    extra_new = math.ceil(cluster_size / table_size)
-
-    if debug:
-        print(f"  New Area {new_area_idx}: extra_tables_needed={extra_new}")
-
-    if best_area is None or extra_new < best_extra:  # type: ignore[arg-type]
+    # ------------------------------------------------------------
+    # If no existing area can accept the cluster, create a new one
+    # ------------------------------------------------------------
+    if best_area is None:
+        new_area_idx = len(areas)
         if debug:
-            print(f"→ Choosing NEW Area {new_area_idx}")
+            print(f"→ Choosing NEW Area {new_area_idx} (no existing area fits)")
         return new_area_idx
-
+    # Otherwise, use the best existing area
     if debug:
-        print(f"→ Choosing EXISTING Area {best_area}")
-    return best_area  # type: ignore[return-value]
+        print(f"→ Choosing EXISTING Area {best_area} (fits in one table)")
+    return best_area
 
 
 # =========================================================
@@ -160,34 +170,34 @@ def assign_cluster_to_area(
 # =========================================================
 
 def place_cluster_into_area(
-    cluster: List["Family"],
-    area_tables: List[List["Family"]],
+    cluster: list["Family"],
+    area_tables: list[list["Family"]],
     table_size: int,
-    requests_map: Dict["Family", List["Family"]],
+    requests_map: dict["Family", list["Family"]],
     debug: bool = True,
 ) -> None:
     """
-    Place all families in a (possibly split) cluster into tables.
+    place all families in a (possibly split) cluster into tables.
 
-    Since oversized families have already been split into table-sized chunks,
+    since oversized families have already been split into table-sized chunks,
     this function becomes a pure bin-packing routine with adjacency scoring.
     """
     if debug:
-        print(f"  Placing cluster of {len(cluster)} families")
+        print(f"  placing cluster of {len(cluster)} families")
 
-    # Track used seats per table
+    # track used seats per table
     table_used = [sum(f.size for f in table) for table in area_tables]
 
     for fam in cluster:
         if debug:
-            print(f"    Placing {fam.last_name} (size {fam.size}, part={fam.part})")
+            print(f"    placing {fam.last_name} (size {fam.size}, part={fam.part})")
 
         requested = set(requests_map.get(fam, []))
 
         best_table = None
         best_score = -1
 
-        # Try to place near requested families
+        # try to place near requested families
         for i, table in enumerate(area_tables):
             remaining = table_size - table_used[i]
             if remaining < fam.size:
@@ -201,27 +211,27 @@ def place_cluster_into_area(
 
         if best_table is not None:
             if debug:
-                print(f"      → Placed at table {best_table} (score {best_score})")
+                print(f"      → placed at table {best_table} (score {best_score})")
             area_tables[best_table].append(fam)
             table_used[best_table] += fam.size
             continue
 
-        # Otherwise place in first table with space
+        # otherwise place in first table with space
         placed = False
         for i, used in enumerate(table_used):
             if used + fam.size <= table_size:
                 if debug:
-                    print(f"      → Placed at table {i} (first fit)")
+                    print(f"      → placed at table {i} (first fit)")
                 area_tables[i].append(fam)
                 table_used[i] += fam.size
                 placed = True
                 break
 
-        # If no table fits, create a new one
+        # if no table fits, create a new one
         if not placed:
             new_idx = len(area_tables)
             if debug:
-                print(f"      → Created new table {new_idx}")
+                print(f"      → created new table {new_idx}")
             area_tables.append([fam])
             table_used.append(fam.size)
 

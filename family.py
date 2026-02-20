@@ -73,6 +73,8 @@ class Family:
 
     def to_dict(self) -> Dict:
         return {
+            "first": self.first_name,
+            "last": self.last_name,
             "email": self.email,
             "size": self.size
         }
@@ -94,7 +96,7 @@ class Family:
                             last_name=row.get(f"Last Name (Ticket {ticket})", ''),
                             age=int(row.get(f"Age (Ticket {ticket})") or 100),
                             meal_choice=coerce_meal(row.get(f"Meal Choice (Ticket {ticket})", "Chicken")),
-                            allergies=row.get(f"List Allergies (Ticket {ticket})", '')
+                            allergies=row.get(f"List Allergies (Ticket {ticket}):", '')
                         ))
                 if num_tickets > 0:
                     families.add(cls(

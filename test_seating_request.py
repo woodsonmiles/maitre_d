@@ -136,3 +136,91 @@ def test_extract_request_does_not_match_substrings_like_le_multiple_strings():
         # The Le family must NOT appear in the results
         assert le_family not in matched, f"'Le' incorrectly matched in: {req}"
 
+
+# Test stripping posessive
+
+def test_possessive_last_name_basic():
+    smith = make_family("John", "Smith")
+
+    last_to_first = {"Smith": ["John"]}
+    last_to_families = {"Smith": [smith]}
+
+    req = "Please seat us near Smith's family."
+
+    result = extract_families_from_request(
+        req, last_to_first, last_to_families, use_fuzzy=False, debug=True
+    )
+
+    assert result == [smith]
+
+def test_possessive_mixed_case():
+    smith = make_family("John", "Smith")
+
+    last_to_first = {"Smith": ["John"]}
+    last_to_families = {"Smith": [smith]}
+
+    req = "Please seat us with SMITH’S group."
+
+    result = extract_families_from_request(
+        req, last_to_first, last_to_families, use_fuzzy=False
+    )
+
+    assert result == [smith]
+
+
+def test_non_possessive_words_unchanged():
+    smith = make_family("John", "Smith")
+
+    last_to_first = {"Smith": ["John"]}
+    last_to_families = {"Smith": [smith]}
+
+    req = "Please seat us with the Smith family."
+
+    result = extract_families_from_request(
+        req, last_to_first, last_to_families, use_fuzzy=False
+    )
+
+    assert result == [smith]
+
+def test_plural_friends_does_not_match_friend_last_name():
+    friend = make_family("Damian", "Friend")
+
+    last_to_first = {"Friend": ["Damian"]}
+    last_to_families = {"Friend": [friend]}
+
+    req = "Please seat us with our friends the Smiths."
+
+    result = extract_families_from_request(
+        req, last_to_first, last_to_families, use_fuzzy=False
+    )
+
+    assert result == []  # should NOT match "Friend"
+
+
+def test_possessive_of_friend_matches_friend():
+    friend = make_family("Damian", "Friend")
+
+    last_to_first = {"Friend": ["Damian"]}
+    last_to_families = {"Friend": [friend]}
+
+    req = "Please seat us with Friend's family."
+
+    result = extract_families_from_request(
+        req, last_to_first, last_to_families, use_fuzzy=False
+    )
+
+    assert result == [friend]
+
+def test_plural_last_name_not_stripped():
+    jones = make_family("John", "Jones")
+
+    last_to_first = {"Jones": ["John"]}
+    last_to_families = {"Jones": [jones]}
+
+    req = "Please seat us with Jones."
+
+    result = extract_families_from_request(
+        req, last_to_first, last_to_families, use_fuzzy=False, debug=True
+    )
+    assert result == [jones]
+

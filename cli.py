@@ -6,9 +6,13 @@ from payment import Payment
 from invitation import Invitation
 from typing import Dict, Set, List
 from matcher import match_families_with_payments
+from placecards import expand_areas_to_guests, write_guest_csv
 from seating_chart import create_area_aware_seating
+from seating_guide import build_seating_guide, write_seating_guide
 from seating_requests import extract_families_from_request, print_requests_map
 from write_seating_results import write_seating_results
+from table_sizes import get_num_families, get_num_guests, get_table_sizes, write_table_sizes
+import yaml
 
 app = typer.Typer()
 
@@ -75,6 +79,39 @@ def assign_tables():
     areas_path = Path.cwd() / 'areas.yaml'
     conflicts_path = Path.cwd() / 'conflicts.yaml'
     write_seating_results(areas, conflicts, layout, areas_path, conflicts_path)
+
+@app.command()
+def seating_guide():
+    """
+    Alphabetized list of last names to help guests know where to sit.
+    """
+    areas_file = Path.cwd() / 'areas.yaml'
+    guide_path = Path.cwd() / 'guide.yaml'
+    guide = build_seating_guide(areas_file)
+    write_seating_guide(guide, guide_path)
+
+@app.command()
+def table_sizes():
+    """
+    List of tables orders by how many are seated at them
+    """
+    areas_file = Path.cwd() / 'areas.yaml'
+    sizes_path = Path.cwd() / 'table_sizes.yaml'
+    sizes = get_table_sizes(areas_file)
+    num_guests = get_num_guests(areas_file)
+    num_families = get_num_families(areas_file)
+    write_table_sizes(sizes, sizes_path, num_guests, num_families)
+
+@app.command()
+def placecards():
+    areas_file = Path.cwd() / 'areas.yaml'
+    placecard_path = Path.cwd() / 'placecards.csv'
+    with open(areas_file, "r") as f:
+        areas = yaml.safe_load(f)
+    matched_families = match_families()
+    email_map = {fam.email: fam for fam in matched_families}
+    placecards = expand_areas_to_guests(areas, email_map)
+    write_guest_csv(placecards, placecard_path)
 
 
 if __name__ == "__main__":

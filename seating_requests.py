@@ -1,6 +1,7 @@
 # https://copilot.microsoft.com/chats/dZs6u27tfmmjbUdQqTY79
 
 import string
+import re
 from difflib import get_close_matches
 from family import Family
 
@@ -22,8 +23,10 @@ def extract_families_from_request(
     # Normalize and strip punctuation
     raw = request_string
     req = request_string.lower()
+    req = strip_possessives(req)
     req = req.translate(str.maketrans("", "", string.punctuation))
     tokens = req.split()
+
 
     if debug:
         print("\n=== extract_families_from_request ===")
@@ -103,6 +106,11 @@ def extract_families_from_request(
         print("=== end extract_families_from_request ===\n")
 
     return result
+
+
+def strip_possessives(text: str) -> str:
+    # Handles: Smith's, Adams’, Jones’s, Williams’
+    return re.sub(r"(\w+)(['’]s|s['’])\b", r"\1", text)
 
 def print_requests_map(requests_map: dict["Family", list["Family"]]) -> None:
     """

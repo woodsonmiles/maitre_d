@@ -1,9 +1,9 @@
 Matched:
-  Payments: 378
-  Families: 369
+  Payments: 405
+  Families: 396
 Unmatched:
-  Payments: 9
-  Families: 38
+  Payments: 3
+  Families: 7
 
 === REQUESTS MAP ===
 Mike Abriam -> <none>
@@ -19,22 +19,24 @@ Joel Armani -> <none>
 Christopher Armenta -> <none>
 Patrick  Aston  -> <none>
 Mike Aubert -> <none>
-Cody Aufrichtig -> <none>
-Ryan Avery -> <none>
+Cody Aufrichtig -> Luke Vercollone
+Ryan Avery -> Luke Vercollone
 Rudy  Avila -> <none>
 Gabriel BALLATORE -> <none>
 Madison Banks -> <none>
 Kevin Baron -> <none>
-Patrick Barrett -> <none>
-David Baumgartner -> Justin Weiler
+Mark  Baroni -> <none>
+Patrick Barrett -> Luke Vercollone
+David Baumgartner -> <none>
 Natalia Bausch -> Jared Lehman
 Matthew Bean -> <none>
 Pedro Benavides -> <none>
 Karl Biermann -> Abigail  White
 David Bird -> <none>
+Pete Bogart -> <none>
 Scott Bond -> <none>
 Eric Boogaard -> <none>
-Matthew Bowen -> <none>
+Matthew Bowen -> Luke Vercollone
 Clara Boydstun -> <none>
 Joseph Boyer -> <none>
 Brian Bozarth -> <none>
@@ -43,21 +45,22 @@ Devin Breese -> <none>
 Sean Briggs -> <none>
 Ben Brightwell -> Erik Gustafson
 Jeremy Brown -> Matt  Gowler
-Joel Brown -> <none>
+Joel Brown -> Luke Vercollone
 Marshal Brown -> Brad Githens
-Mike  Brumbaugh -> Sal Mancini, Tye Ragsdale, Jeff Schwarzentraub, John Hilborn, Nick Parise
+Hugo Bruciaga -> <none>
+Mike  Brumbaugh -> Tye Ragsdale, Jeff Schwarzentraub, Randall  Gerry, Sal Mancini, Nick Parise, John Hilborn
 David Brummels -> <none>
-Kenzie  Buckhaults -> Jess Adams, Jason Adams
+Kenzie  Buckhaults -> <none>
 Beth Burns -> <none>
 Mark Burr -> <none>
 Robert Burton -> <none>
 Marcus Button -> <none>
 Eli Byler -> <none>
-MARCOS CHAVEZ -> Mike  Brumbaugh, Blake Williams
+MARCOS CHAVEZ -> Blake Williams, Mike  Brumbaugh
 Kirk Cameron -> <none>
 Kevin Campbell -> <none>
 Jeremy  Cannon -> <none>
-Hector Cardenas -> Levi Durow, Joshua Durow
+Hector Cardenas -> Luke Vercollone, Levi Durow, Joshua Durow
 Steven Carlson -> <none>
 Jeff Casey -> <none>
 Kaylee Castellini -> Jose Martinez
@@ -65,9 +68,9 @@ Michael Chandler -> <none>
 Josh Chesebro -> <none>
 Isaac Chung -> Toan Chung, Vinh Chung
 Toan Chung -> Isaac Chung, Vinh Chung
-Vinh Chung -> Toan Chung, Isaac Chung
+Vinh Chung -> Isaac Chung, Toan Chung
 Rileyanna Clark -> <none>
-Chris  Clay -> <none>
+Chris  Clay -> Luke Vercollone
 Ricky Conner -> <none>
 Chloe Cooper -> <none>
 Micheal Cordova -> <none>
@@ -75,6 +78,7 @@ Stephen Cordova -> <none>
 Shannon Cotten -> <none>
 Sydney Craig -> <none>
 Josh Crotser -> <none>
+Sandor Csikesz -> <none>
 Chris Curlette -> <none>
 Grady Dacus -> John Jennings, Kevin Ridenour
 Ryan Davenport -> <none>
@@ -89,24 +93,25 @@ Tyler  Dexter -> <none>
 Ted Dibble -> <none>
 Shane Dickey -> <none>
 Frank Djonbalaj -> Jonathan  Mayles
-Michael  Dunn -> <none>
-Joshua Durow -> Hector Cardenas, Ted Dibble
-Levi Durow -> <none>
+Robert Dover -> <none>
+Michael Dunn -> <none>
+Joshua Durow -> Hector Cardenas, Luke Vercollone, Ted Dibble
+Levi Durow -> Luke Vercollone
 Daniel Dutro -> <none>
 Travis Easton -> <none>
 David Eaton -> <none>
 Nicholas Eimer -> <none>
 Hayley  Eisenbeis -> Jason Fink
-Mikayla Elizabeth -> <none>
+Marcus Ellis -> <none>
 John Epperly -> Eric Hetzel
 Chris Evans -> Luke Redmon
 Mike Evans -> <none>
-Clare Falls -> <none>
-Robert Farris -> <none>
-Branden Felker -> <none>
+Clare Falls -> Luke Vercollone
+Robert Farris -> Luke Vercollone
+Branden Felker -> Luke Vercollone
 Manuel Fernandez -> Miguel Fernandez
 Miguel Fernandez -> <none>
-Jeremy  Ferranti  -> <none>
+Jeremy  Ferranti  -> Luke Vercollone
 Jason Fink -> <none>
 David Fisher -> <none>
 Dereck  Fisher  -> <none>
@@ -114,7 +119,7 @@ Nathan Fisk -> <none>
 Ron Fitch -> <none>
 Alexis Fitzgerald -> <none>
 Jacob Flood -> <none>
-David Foley -> Grace Weidmann, Stephen  Verwers, David Willis
+David Foley -> Andre Lavoie, Stephen  Verwers, David Willis, Grace Weidmann
 Steve Foltz -> <none>
 Neil Fournie -> <none>
 Aliyah Frese -> <none>
@@ -123,9 +128,10 @@ Travis Gale -> <none>
 Paul Gamache -> <none>
 Gregory Garcia -> <none>
 Luis  Garcia -> <none>
-Marcelo Garcia -> <none>
+Marcelo Garcia -> Luke Vercollone
 George Gaugler -> Everly  Slone
 Johnnie Genser -> <none>
+Randall  Gerry -> <none>
 Dante Giadone -> <none>
 Brett Gibson -> Rajeev Shaw
 Finlay  Gillis -> David Foley, Matt Krynovich
@@ -134,6 +140,7 @@ Stephen Girlando -> <none>
 Brad Githens -> Marshal Brown
 Anthony Giusto -> <none>
 Matthew Glenn -> Izzy Hayden
+Chaim Goldman -> <none>
 J.R. Gonzales -> Marcus Valone
 Ryan Gonzales -> Terence Jackson, Christopher Jackson, Marcus Yanez
 Enrique  Gonzalez  -> <none>
@@ -155,23 +162,26 @@ Joel Helzer -> Dan Perkins
 Matt Hepp -> Andrew Judkins
 Eric Hetzel -> John Epperly
 Scott Heyler -> <none>
-Grove Higgins -> <none>
+Grove Higgins -> Luke Vercollone
 John Hilborn -> Mike  Brumbaugh
-Tyler Hoerner -> Jared Lehman
+Tyler Hoerner -> Bradley Pierson, Jared Lehman
+Jeff Holck -> Neal Oseland
+Blake Horn -> <none>
 Steven Hoskins -> <none>
 Keith Howard -> <none>
 Chris Howe -> <none>
 Doug Howe -> <none>
-Javon Hughes  -> <none>
+Javon Hughes  -> Jeremiah Ardilla
+Cowl Humphries -> <none>
 Benito Huron -> <none>
-Victor Iacobbo -> <none>
+Victor Iacobbo -> Luke Vercollone
 Christopher Jackson -> <none>
 Terence Jackson -> Marcus Yanez
 Britt James -> <none>
 Jason laffler Jason laffler -> <none>
 Dan Jeltes -> Kurt Schumaker
 John Jennings -> Grady Dacus
-Paul  Jensen -> <none>
+Paul  Jensen -> Luke Vercollone
 Jacque Joffrion -> <none>
 Josh Johner -> <none>
 Charlie Johnson -> <none>
@@ -180,24 +190,27 @@ Derek Jones -> <none>
 Jake Jones -> Sydney Craig
 Kylie  Jones -> <none>
 Michael Jones -> <none>
+Tyler Jones -> <none>
 Jesus Jordan -> <none>
 Jason Jorgenson -> <none>
 Andrew Judkins -> Matt Hepp
 Andrew Kaczka -> Eric Link
-Chad Keirns -> Clare Falls
+Chad Keirns -> Clare Falls, Luke Vercollone
 Kennedy Kinard -> <none>
 Petie Kinder -> <none>
-Chris  Kirk -> Michael Smoot, Mikayla Elizabeth
+Chris  Kirk -> Adam Smoot
 Alexin Kleski -> <none>
 Jeff Klosky -> <none>
 Kenny Knapp -> <none>
-Eric Kniffin -> <none>
+Eric Kniffin -> Luke Vercollone
 Delaney  Korte  -> <none>
 Strings Kozisek -> <none>
+John Kraft -> Jeremiah Ardilla
 Paul A. Krause -> Ted Schmid
 Matt Krynovich -> <none>
 Tad Kubacka -> <none>
-Nick Kundert -> Bradley Nathan, Christopher Jones, Michael Jones, Jake Jones, Derek Jones, Kylie  Jones, David Adkinson, Nathan Fisk
+Matt Kubiak -> <none>
+Nick Kundert -> Nathan Fisk, Tyler Jones, David Adkinson, Bradley Nathan
 Elias Kunishige -> <none>
 Lucas Lafferty  -> <none>
 Caleb Lambert -> <none>
@@ -206,8 +219,8 @@ Allyson Larsen -> <none>
 Erik Larsen -> Mark Nagel
 Andre Lavoie -> <none>
 Andrew Lavoie -> <none>
-Megan Law -> Megan Law
 Vuongvu Le -> <none>
+Daniel LeBaron -> <none>
 Val LeMaire -> Elka Vitt
 Jared Lehman -> Jeremy Myers
 Steve Lepine -> <none>
@@ -215,15 +228,17 @@ Jeff Lewis -> <none>
 Eric Link -> <none>
 Brandan Lloyd -> <none>
 Herman  Lucero -> <none>
-Alejandro Lugo -> <none>
+Alejandro Lugo -> Luke Vercollone
+James Majors -> Marcus Valone
 Joel  Malick -> <none>
 Sal Mancini -> Mike  Brumbaugh
 Andy Martin -> <none>
 Jose Martinez -> <none>
 Chad Mathis -> <none>
+Drew Mau -> <none>
 Jared May -> <none>
-Jonathan  Mayles -> <none>
-Liam McArdle -> <none>
+Jonathan  Mayles -> Frank Djonbalaj
+Liam McArdle -> Luke Vercollone
 Kyle McCullough -> <none>
 Marcus McFarland -> <none>
 Saul McGirr -> Mike  Brumbaugh
@@ -232,9 +247,10 @@ Matt Meister -> <none>
 Nathan Merrill -> Caleb Lambert
 Kaitlin Michael  -> Grove Higgins
 Tim Miles -> <none>
+Ralph Mills -> <none>
 Steve  Mitchell -> <none>
 Rudi Mitutoiu -> Michael Pickett
-Yemi Mobolade -> Yemi Mobolade, Alejandro Lugo
+Yemi Mobolade -> Yemi Mobolade, Luke Vercollone, Alejandro Lugo
 Samuel Montoya -> <none>
 Jenna Moor -> <none>
 Jeff Morris -> Dan Perkins, Joel Armani
@@ -246,10 +262,11 @@ Bradley Nathan -> <none>
 Ava Netzler -> <none>
 David Nevarez -> <none>
 Audrey O'Boyle -> <none>
+Reid O'Lear -> <none>
 Taylor OLeary -> <none>
 Sean OMalley  -> David Bird
 Rob Oldach -> David Eaton
-John  Oldenburg -> Joey DeLorme, Kenzie  Buckhaults, Jason Adams
+John  Oldenburg -> Kenzie  Buckhaults, Joey DeLorme
 Luis Ortiz Rodriguez -> <none>
 Neal Oseland -> <none>
 Sarah Osterman -> mark stieber
@@ -259,18 +276,21 @@ Richard Palmer -> <none>
 Nick Parise -> <none>
 Nathan  Pearsall  -> <none>
 Aaron Pennington -> <none>
-Felipe  Perez  -> Jeremiah Ardilla
+Felipe  Perez  -> Jeremiah Ardilla, John Kraft
 Dan Perkins -> <none>
 Mike Peterson -> <none>
-Andrew Phizacklea -> <none>
+Rick Peterson -> <none>
+Andrew Phizacklea -> Luke Vercollone
 Michael Pickett -> <none>
+Bradley Pierson -> Luke Vercollone
+Thomas Pisculli -> <none>
 Brian Plaisted -> <none>
 Ryan  Plunkett -> <none>
 Matthew  Powell -> Eric  Yeager
 Ryan Prickett -> <none>
-James Ragain -> <none>
+James Ragain -> Nick Ragain
 Nick Ragain -> <none>
-Tye Ragsdale -> Mike  Brumbaugh, Nick Parise, Jeff Schwarzentraub
+Tye Ragsdale -> Jeff Schwarzentraub, Nick Parise, Mike  Brumbaugh
 David Ragsdill -> <none>
 Robert Ramirez -> Robert Ramirez
 Analisia  Ramirez  -> Robert Ramirez
@@ -280,56 +300,60 @@ Luke Redmon -> Chris Evans
 Danika Reinhard -> <none>
 Mike Reissig -> <none>
 James Rickman -> <none>
-Kevin Ridenour -> John Jennings, Grady Dacus
+Kevin Ridenour -> Grady Dacus, John Jennings
 Adam Roberts -> <none>
 Matthew Roberts -> <none>
 Adam Robinson -> <none>
-Charles Rodgers -> Michael Smoot, Mikayla Elizabeth
 Bryan Rodriguerz -> <none>
-Alex Romano -> Terence Jackson, Christopher Jackson
+Alex Romano -> Christopher Jackson
 Lorenzo Roybal -> <none>
 Eric Ruettinger -> Malea  Heeter
 Toby Saben -> <none>
 Gabe Salazar -> <none>
-Jared Sauer -> <none>
-David Schaefer -> <none>
+Jared Sauer -> Brandan Lloyd
+David Schaefer -> Luke Vercollone
 Steve Scheller -> <none>
 James Schlueter -> <none>
 Ted Schmid -> Paul A. Krause
 Jessica Schrader -> <none>
 Kalani Schreiner  -> <none>
-Kurt Schumaker -> Michael Smoot, Mikayla Elizabeth
+Kurt Schumaker -> Adam Smoot
+Bill Schutz -> Luke Vercollone
 Blake Schwank -> <none>
-Jeff Schwarzentraub -> Mike  Brumbaugh, Nick Parise
+Jeff Schwarzentraub -> Nick Parise, Mike  Brumbaugh
 Rodger Scriven -> <none>
-Tom Scuderi -> <none>
+Tom Scuderi -> Daniel Silk
 Kenneth Serfas -> <none>
 Nathan  Seward -> <none>
-Seth  Shaver -> Kaylee Castellini, Jose Martinez
+Anthony Shadbolt I -> <none>
+Seth  Shaver -> Jose Martinez, Kaylee Castellini
 Rajeev Shaw -> <none>
+Robert Shea -> Jessica Schrader
+Dan Shelton -> <none>
 Daniel Silk -> <none>
-Steve Slifka -> Alejandro Lugo
+Steve Slifka -> Luke Vercollone, Alejandro Lugo
 Everly  Slone -> George Gaugler
 Christopher Smith -> <none>
 Evelyn Smith -> <none>
 Ken Smith -> <none>
 Todd Smith -> <none>
-Michael Smoot -> Michael Smoot
+Adam Smoot -> Chris  Kirk, Michael Smoot, Kurt Schumaker
+Michael Smoot -> Adam Smoot
 Michael Spain -> Michael Chandler
 Tim Sparks -> <none>
 Jason Spence -> <none>
 Chris Spielhagen -> <none>
 Jeff Stahl -> <none>
-Zachary Stanley -> <none>
+Zachary Stanley -> Luke Vercollone
 Joseph Steiger -> <none>
 Erik Talamantes -> <none>
 Michael Taylor  -> Rudy  Avila
-David Theis -> <none>
+David Theis -> Luke Vercollone
 Brianna Thomad -> <none>
 Jeff Thomas -> <none>
 Prophet Thomas -> <none>
 Donny Thurnherr -> <none>
-Joe Trechter -> <none>
+Joe Trechter -> Luke Vercollone
 Aylah Tschamler -> Chris Giovagnoni
 Ryan Tyng -> Abigail  White
 Jay  Underwood -> Abigail  White
@@ -337,7 +361,7 @@ Maya Uribe -> <none>
 Elias Ursitti -> Daniel Dutro
 ADAM  VERI  -> <none>
 Benjamin Valentin -> <none>
-Marcus Valone -> J.R. Gonzales, Ryan Gonzales, David Bird
+Marcus Valone -> David Bird, J.R. Gonzales, Ryan Gonzales, Britt James
 Juan Vazquez -> <none>
 Luke Vercollone -> <none>
 Stephen  Verwers -> David Foley
@@ -345,8 +369,9 @@ Bernie  Vitale -> <none>
 Elka Vitt -> Val LeMaire, Elka Vitt
 Josh Vogt -> <none>
 Justin Von Hofe  -> Steve Foltz
-Tom Waits -> David Theis, Hector Cardenas
+Tom Waits -> David Theis, Hector Cardenas, Luke Vercollone
 Mark Walp -> <none>
+Steven Walsh -> <none>
 Seth Warren -> <none>
 SCOTT Wasik -> <none>
 CHAPPY Watties -> <none>
@@ -355,9 +380,11 @@ Grace Weidmann -> <none>
 Justin Weiler -> David Baumgartner
 Leilah Wells -> <none>
 Mel Wernimont -> <none>
-JP West -> Eric Kniffin
-Abigail  White -> Jay  Underwood, Stephen Cordova, Micheal Cordova, Luis Pacheco, Ryan Tyng, Karl Biermann
+JP West -> Eric Kniffin, Luke Vercollone
+Jeffrey Wheaton -> <none>
+Abigail  White -> Karl Biermann, Ryan Tyng, Stephen Cordova, Micheal Cordova, Luis Pacheco, Jay  Underwood
 Carlton Whitehead -> <none>
+Ahmad Whiting -> <none>
 Matthew Whitt -> Danika Reinhard
 Mark Wiebenga -> Lorenzo Roybal
 Corey Wiederholt -> <none>
@@ -365,12 +392,12 @@ Blake Williams -> <none>
 David Willis -> <none>
 Anthony Wise -> <none>
 Andrew  Wright -> <none>
-Collin Wright -> <none>
-Jayce Wright -> Matt Hepp, Collin Wright
+Collin Wright -> Luke Vercollone
+Jayce Wright -> Collin Wright, Matt Hepp
 Marcus Yanez -> Blake Williams
 Eric  Yeager -> <none>
 Madison Young -> <none>
-Rick Zellen -> <none>
+Rick Zellen -> Luke Vercollone
 Jordan Zielinski -> <none>
 christopher ames -> christopher ames, Ronny Webb
 Ryan halla -> Matt Meister
@@ -387,47 +414,83 @@ Cluster 0 (1 families):
 Cluster 1 (1 families):
   - Jason Jorgenson (size=2)
 
-Cluster 2 (1 families):
+Cluster 2 (44 families):
   - Jeremy  Ferranti  (size=2)
-
-Cluster 3 (4 families):
+  - Luke Vercollone (size=4)
+  - Victor Iacobbo (size=2)
+  - Robert Farris (size=2)
+  - David Theis (size=2)
+  - Marcelo Garcia (size=2)
+  - Grove Higgins (size=2)
+  - Matthew Bowen (size=2)
+  - Joe Trechter (size=2)
+  - Chris  Clay (size=2)
+  - Zachary Stanley (size=2)
+  - Paul  Jensen (size=2)
+  - Joel Brown (size=2)
+  - Andrew Phizacklea (size=4)
+  - Branden Felker (size=2)
+  - Tom Waits (size=4)
+  - Cody Aufrichtig (size=2)
+  - JP West (size=2)
+  - Clare Falls (size=2)
+  - David Schaefer (size=2)
+  - Rick Zellen (size=3)
+  - Joshua Durow (size=3)
+  - Ryan Avery (size=2)
+  - Alejandro Lugo (size=2)
+  - Hector Cardenas (size=4)
+  - Patrick Barrett (size=2)
+  - Chad Keirns (size=2)
+  - Levi Durow (size=2)
+  - Steve Slifka (size=2)
+  - Eric Kniffin (size=5)
+  - Bill Schutz (size=4)
   - Collin Wright (size=2)
+  - Yemi Mobolade (size=2)
+  - Liam McArdle (size=2)
+  - Bradley Pierson (size=3)
+  - Kaitlin Michael  (size=2)
+  - Ted Dibble (size=2)
   - Jayce Wright (size=2)
+  - Tyler Hoerner (size=2)
   - Matt Hepp (size=3)
+  - Jared Lehman (size=2)
   - Andrew Judkins (size=2)
+  - Natalia Bausch (size=2)
+  - Jeremy Myers (size=2)
 
-Cluster 4 (1 families):
+Cluster 3 (1 families):
   - Madison Banks (size=2)
 
-Cluster 5 (1 families):
-  - Ron Fitch (size=2)
-
-Cluster 6 (2 families):
+Cluster 4 (2 families):
   - Robert Ramirez (size=2)
   - Analisia  Ramirez  (size=3)
 
-Cluster 7 (7 families):
+Cluster 5 (1 families):
+  - Ahmad Whiting (size=2)
+
+Cluster 6 (7 families):
   - Ryan Tyng (size=2)
   - Abigail  White (size=2)
-  - Jay  Underwood (size=2)
   - Karl Biermann (size=2)
   - Stephen Cordova (size=2)
-  - Micheal Cordova (size=3)
   - Luis Pacheco (size=2)
+  - Micheal Cordova (size=3)
+  - Jay  Underwood (size=2)
 
-Cluster 8 (6 families):
-  - David Theis (size=2)
-  - Tom Waits (size=4)
-  - Hector Cardenas (size=4)
-  - Joshua Durow (size=3)
-  - Levi Durow (size=2)
-  - Ted Dibble (size=2)
+Cluster 7 (2 families):
+  - James Ragain (size=2)
+  - Nick Ragain (size=2)
+
+Cluster 8 (1 families):
+  - Ron Fitch (size=2)
 
 Cluster 9 (1 families):
-  - James Ragain (size=2)
+  - Gabriel BALLATORE (size=2)
 
 Cluster 10 (1 families):
-  - Gabriel BALLATORE (size=2)
+  - Benito Huron (size=2)
 
 Cluster 11 (1 families):
   - Adam Robinson (size=2)
@@ -436,843 +499,822 @@ Cluster 12 (1 families):
   - Kalani Schreiner  (size=2)
 
 Cluster 13 (1 families):
-  - Matthew Roberts (size=2)
+  - Jeffrey Wheaton (size=2)
 
-Cluster 14 (3 families):
-  - Yemi Mobolade (size=2)
-  - Alejandro Lugo (size=2)
-  - Steve Slifka (size=2)
-
-Cluster 15 (1 families):
-  - Benito Huron (size=2)
-
-Cluster 16 (12 families):
-  - Christopher Jones (size=2)
-  - Nick Kundert (size=3)
-  - Jessica Schrader (size=2)
-  - Nathan Fisk (size=3)
-  - Jake Jones (size=2)
-  - Derek Jones (size=3)
-  - Michael Jones (size=3)
-  - Bradley Nathan (size=2)
-  - David Adkinson (size=3)
-  - Kylie  Jones (size=2)
-  - Sydney Craig (size=2)
-  - Lizzie Breau (size=2)
-
-Cluster 17 (1 families):
+Cluster 14 (1 families):
   - Chris Curlette (size=2)
 
-Cluster 18 (1 families):
-  - Matthew Bowen (size=2)
+Cluster 15 (3 families):
+  - Christopher Jones (size=2)
+  - Jessica Schrader (size=2)
+  - Robert Shea (size=2)
 
-Cluster 19 (4 families):
+Cluster 16 (1 families):
+  - Matthew Roberts (size=2)
+
+Cluster 17 (4 families):
   - Dan Perkins (size=2)
   - Jeff Morris (size=2)
   - Joel Helzer (size=2)
   - Joel Armani (size=2)
 
-Cluster 20 (3 families):
-  - Toan Chung (size=2)
+Cluster 18 (1 families):
+  - Michael Jones (size=3)
+
+Cluster 19 (3 families):
   - Isaac Chung (size=2)
+  - Toan Chung (size=2)
   - Vinh Chung (size=2)
 
+Cluster 20 (1 families):
+  - Ryan Prickett (size=2)
+
 Cluster 21 (2 families):
-  - David Baumgartner (size=2)
   - Justin Weiler (size=2)
+  - David Baumgartner (size=2)
 
-Cluster 22 (6 families):
-  - Kurt Schumaker (size=2)
-  - Mikayla Elizabeth (size=1)
-  - Michael Smoot (size=2)
-  - Dan Jeltes (size=2)
-  - Chris  Kirk (size=2)
-  - Charles Rodgers (size=1)
-
-Cluster 23 (1 families):
-  - Jordan Zielinski (size=2)
-
-Cluster 24 (1 families):
-  - Branden Felker (size=2)
-
-Cluster 25 (1 families):
-  - Christopher Smith (size=3)
-
-Cluster 26 (1 families):
-  - Britt James (size=2)
-
-Cluster 27 (2 families):
-  - Luke Redmon (size=2)
-  - Chris Evans (size=2)
-
-Cluster 28 (1 families):
-  - Taylor OLeary (size=2)
-
-Cluster 29 (1 families):
-  - Adam Roberts (size=2)
-
-Cluster 30 (2 families):
+Cluster 22 (2 families):
   - Mark Wiebenga (size=2)
   - Lorenzo Roybal (size=2)
 
-Cluster 31 (1 families):
+Cluster 23 (1 families):
+  - Christopher Smith (size=3)
+
+Cluster 24 (2 families):
+  - Chris Evans (size=2)
+  - Luke Redmon (size=2)
+
+Cluster 25 (21 families):
+  - Britt James (size=2)
+  - Marcus Valone (size=3)
+  - J.R. Gonzales (size=2)
+  - James Majors (size=2)
+  - David Bird (size=2)
+  - Ryan Gonzales (size=2)
+  - Sean OMalley  (size=2)
+  - Marcus Yanez (size=4)
+  - Terence Jackson (size=2)
+  - Christopher Jackson (size=3)
+  - Blake Williams (size=2)
+  - Alex Romano (size=2)
+  - MARCOS CHAVEZ (size=2)
+  - Mike  Brumbaugh (size=2)
+  - Saul McGirr (size=2)
+  - Tye Ragsdale (size=4)
+  - Sal Mancini (size=2)
+  - John Hilborn (size=2)
+  - Nick Parise (size=4)
+  - Jeff Schwarzentraub (size=3)
+  - Randall  Gerry (size=2)
+
+Cluster 26 (1 families):
+  - Taylor OLeary (size=2)
+
+Cluster 27 (1 families):
   - Joseph Steiger (size=2)
 
-Cluster 32 (1 families):
+Cluster 28 (1 families):
   - Joel  Malick (size=2)
 
-Cluster 33 (1 families):
-  - Ryan Prickett (size=2)
-
-Cluster 34 (2 families):
+Cluster 29 (2 families):
   - Michael Chandler (size=2)
   - Michael Spain (size=7)
 
-Cluster 35 (2 families):
+Cluster 30 (1 families):
+  - Adam Roberts (size=2)
+
+Cluster 31 (1 families):
+  - Jordan Zielinski (size=2)
+
+Cluster 32 (5 families):
+  - Kurt Schumaker (size=2)
+  - Adam Smoot (size=4)
+  - Dan Jeltes (size=2)
+  - Michael Smoot (size=2)
+  - Chris  Kirk (size=2)
+
+Cluster 33 (1 families):
+  - Blake Horn (size=2)
+
+Cluster 34 (2 families):
   - Daniel Dutro (size=3)
   - Elias Ursitti (size=2)
 
-Cluster 36 (3 families):
-  - Jeremy Brown (size=2)
-  - Matt  Gowler (size=3)
-  - Brian Gould (size=2)
+Cluster 35 (2 families):
+  - Brett Gibson (size=2)
+  - Rajeev Shaw (size=2)
 
-Cluster 37 (2 families):
+Cluster 36 (2 families):
   - Justin Von Hofe  (size=2)
   - Steve Foltz (size=2)
+
+Cluster 37 (4 families):
+  - John Kraft (size=2)
+  - Felipe  Perez  (size=2)
+  - Jeremiah Ardilla (size=2)
+  - Javon Hughes  (size=1)
 
 Cluster 38 (1 families):
   - Josh Crotser (size=3)
 
 Cluster 39 (1 families):
-  - Ryan Avery (size=2)
+  - Paul Gamache (size=2)
 
-Cluster 40 (2 families):
+Cluster 40 (1 families):
+  - Nathan Raymond  (size=2)
+
+Cluster 41 (1 families):
+  - Eric Boogaard (size=2)
+
+Cluster 42 (1 families):
+  - Aaron Pennington (size=2)
+
+Cluster 43 (1 families):
+  - Lucas Lafferty  (size=2)
+
+Cluster 44 (1 families):
+  - Kyle McCullough (size=2)
+
+Cluster 45 (1 families):
+  - Luis  Garcia (size=2)
+
+Cluster 46 (1 families):
+  - Pete Bogart (size=2)
+
+Cluster 47 (3 families):
+  - Jeremy Brown (size=2)
+  - Matt  Gowler (size=3)
+  - Brian Gould (size=2)
+
+Cluster 48 (2 families):
   - Ronny Webb (size=2)
   - christopher ames (size=5)
 
-Cluster 41 (2 families):
-  - Brett Gibson (size=2)
-  - Rajeev Shaw (size=2)
-
-Cluster 42 (1 families):
+Cluster 49 (1 families):
   - Seth Devine (size=2)
 
-Cluster 43 (1 families):
-  - Travis Gale (size=2)
-
-Cluster 44 (1 families):
-  - Lucas Lafferty  (size=2)
-
-Cluster 45 (1 families):
-  - Paul Gamache (size=2)
-
-Cluster 46 (18 families):
-  - Terence Jackson (size=2)
-  - Alex Romano (size=2)
-  - Ryan Gonzales (size=2)
-  - Marcus Yanez (size=4)
-  - Christopher Jackson (size=3)
-  - Marcus Valone (size=3)
-  - Blake Williams (size=2)
-  - David Bird (size=2)
-  - J.R. Gonzales (size=2)
-  - MARCOS CHAVEZ (size=2)
-  - Sean OMalley  (size=2)
-  - Mike  Brumbaugh (size=2)
-  - John Hilborn (size=2)
-  - Jeff Schwarzentraub (size=3)
-  - Saul McGirr (size=2)
-  - Tye Ragsdale (size=4)
-  - Nick Parise (size=4)
-  - Sal Mancini (size=2)
-
-Cluster 47 (1 families):
-  - Pedro Benavides (size=3)
-
-Cluster 48 (1 families):
-  - Kyle McCullough (size=2)
-
-Cluster 49 (1 families):
-  - Petie Kinder (size=2)
-
 Cluster 50 (1 families):
-  - Luis  Garcia (size=2)
-
-Cluster 51 (1 families):
-  - Andrew Phizacklea (size=4)
-
-Cluster 52 (1 families):
-  - Nathan Raymond  (size=2)
-
-Cluster 53 (1 families):
-  - Aaron Pennington (size=2)
-
-Cluster 54 (1 families):
   - Cory  Adkisson (size=2)
 
-Cluster 55 (1 families):
-  - Cody Aufrichtig (size=2)
+Cluster 51 (1 families):
+  - Petie Kinder (size=2)
 
-Cluster 56 (1 families):
-  - Eric Boogaard (size=2)
+Cluster 52 (1 families):
+  - Pedro Benavides (size=3)
 
-Cluster 57 (1 families):
+Cluster 53 (1 families):
+  - Travis Gale (size=2)
+
+Cluster 54 (2 families):
   - Daniel Silk (size=5)
+  - Tom Scuderi (size=3)
 
-Cluster 58 (5 families):
+Cluster 55 (5 families):
   - Joey DeLorme (size=3)
+  - Kenzie  Buckhaults (size=2)
   - John  Oldenburg (size=2)
   - Jason Adams (size=4)
-  - Kenzie  Buckhaults (size=2)
   - Jess Adams (size=4)
 
-Cluster 59 (1 families):
-  - Benjamin Mueller (size=2)
-
-Cluster 60 (1 families):
-  - Victor Iacobbo (size=2)
-
-Cluster 61 (2 families):
-  - JP West (size=2)
-  - Eric Kniffin (size=5)
-
-Cluster 62 (1 families):
-  - Scott Deeney (size=2)
-
-Cluster 63 (1 families):
-  - Eli Byler (size=2)
-
-Cluster 64 (1 families):
-  - Ken Smith (size=2)
-
-Cluster 65 (1 families):
-  - Bryan Rodriguerz (size=2)
-
-Cluster 66 (1 families):
+Cluster 56 (1 families):
   - Ricky Conner (size=2)
 
-Cluster 67 (1 families):
-  - Camron Griego (size=2)
+Cluster 57 (1 families):
+  - Eli Byler (size=2)
 
-Cluster 68 (2 families):
+Cluster 58 (1 families):
+  - Prophet Thomas (size=2)
+
+Cluster 59 (1 families):
+  - Scott Deeney (size=2)
+
+Cluster 60 (1 families):
+  - Ken Smith (size=2)
+
+Cluster 61 (2 families):
   - Matthew Glenn (size=2)
   - Izzy Hayden (size=2)
 
-Cluster 69 (2 families):
+Cluster 62 (1 families):
+  - Robert Dover (size=2)
+
+Cluster 63 (1 families):
+  - Matt Kubiak (size=2)
+
+Cluster 64 (1 families):
+  - Benjamin Mueller (size=2)
+
+Cluster 65 (1 families):
+  - Camron Griego (size=2)
+
+Cluster 66 (2 families):
+  - Jared Sauer (size=2)
+  - Brandan Lloyd (size=3)
+
+Cluster 67 (2 families):
   - Miguel Fernandez (size=2)
   - Manuel Fernandez (size=2)
 
+Cluster 68 (1 families):
+  - Bryan Rodriguerz (size=2)
+
+Cluster 69 (1 families):
+  - Reid O'Lear (size=2)
+
 Cluster 70 (1 families):
-  - Jared Sauer (size=2)
+  - Michael Dunn (size=3)
 
 Cluster 71 (1 families):
-  - Robert Farris (size=2)
-
-Cluster 72 (2 families):
-  - Jeremiah Ardilla (size=2)
-  - Felipe  Perez  (size=2)
-
-Cluster 73 (1 families):
-  - Prophet Thomas (size=2)
-
-Cluster 74 (1 families):
-  - Neil Fournie (size=2)
-
-Cluster 75 (1 families):
-  - Jacob McMurphy (size=2)
-
-Cluster 76 (1 families):
-  - Walter Lang (size=2)
-
-Cluster 77 (1 families):
-  - Andrew Lavoie (size=2)
-
-Cluster 78 (2 families):
-  - Matthew Whitt (size=2)
-  - Danika Reinhard (size=2)
-
-Cluster 79 (1 families):
-  - Nathan  Seward (size=2)
-
-Cluster 80 (1 families):
-  - Matthew Bean (size=2)
-
-Cluster 81 (1 families):
-  - Danny  Packard  (size=3)
-
-Cluster 82 (1 families):
-  - Carlton Whitehead (size=2)
-
-Cluster 83 (1 families):
-  - James  Gottry (size=2)
-
-Cluster 84 (2 families):
-  - Chad Keirns (size=2)
-  - Clare Falls (size=2)
-
-Cluster 85 (1 families):
-  - Anthony Giusto (size=2)
-
-Cluster 86 (1 families):
-  - Andy Martin (size=2)
-
-Cluster 87 (1 families):
-  - Andre Lavoie (size=2)
-
-Cluster 88 (1 families):
   - Tyler  Dexter (size=2)
 
-Cluster 89 (3 families):
+Cluster 72 (1 families):
+  - Andrew Lavoie (size=2)
+
+Cluster 73 (1 families):
+  - Matthew Bean (size=2)
+
+Cluster 74 (1 families):
+  - Anthony Giusto (size=2)
+
+Cluster 75 (1 families):
+  - James  Gottry (size=2)
+
+Cluster 76 (7 families):
+  - Andre Lavoie (size=2)
+  - David Foley (size=2)
+  - David Willis (size=2)
+  - Grace Weidmann (size=2)
+  - Stephen  Verwers (size=3)
+  - Finlay  Gillis (size=2)
+  - Matt Krynovich (size=2)
+
+Cluster 77 (1 families):
+  - Andy Martin (size=2)
+
+Cluster 78 (1 families):
+  - Neil Fournie (size=2)
+
+Cluster 79 (1 families):
+  - Carlton Whitehead (size=2)
+
+Cluster 80 (1 families):
+  - Danny  Packard  (size=3)
+
+Cluster 81 (1 families):
+  - Nicholas Eimer (size=2)
+
+Cluster 82 (1 families):
+  - Chris DeMary (size=2)
+
+Cluster 83 (3 families):
   - Grady Dacus (size=3)
   - Kevin Ridenour (size=2)
   - John Jennings (size=2)
 
+Cluster 84 (1 families):
+  - Jacob McMurphy (size=2)
+
+Cluster 85 (1 families):
+  - Walter Lang (size=2)
+
+Cluster 86 (2 families):
+  - Matthew Whitt (size=2)
+  - Danika Reinhard (size=2)
+
+Cluster 87 (1 families):
+  - Nathan  Seward (size=2)
+
+Cluster 88 (5 families):
+  - David Adkinson (size=3)
+  - Nick Kundert (size=3)
+  - Bradley Nathan (size=2)
+  - Tyler Jones (size=2)
+  - Nathan Fisk (size=3)
+
+Cluster 89 (3 families):
+  - Jake Jones (size=2)
+  - Sydney Craig (size=2)
+  - Lizzie Breau (size=2)
+
 Cluster 90 (1 families):
-  - Chris DeMary (size=2)
+  - Ryan Davenport (size=2)
 
 Cluster 91 (1 families):
-  - Nicholas Eimer (size=2)
+  - Chris Spielhagen (size=3)
 
 Cluster 92 (1 families):
-  - Luke Vercollone (size=4)
+  - James Schlueter (size=2)
 
 Cluster 93 (1 families):
-  - Rick Zellen (size=3)
+  - Patrick  Aston  (size=2)
 
 Cluster 94 (2 families):
   - Eric Ruettinger (size=3)
   - Malea  Heeter (size=2)
 
-Cluster 95 (1 families):
-  - Jeff Klosky (size=3)
+Cluster 95 (2 families):
+  - Mark Nagel (size=2)
+  - Erik Larsen (size=4)
 
 Cluster 96 (1 families):
-  - James Schlueter (size=2)
+  - Jason Spence (size=2)
 
 Cluster 97 (1 families):
   - Corey Wiederholt (size=2)
 
-Cluster 98 (6 families):
-  - Stephen  Verwers (size=3)
-  - David Foley (size=2)
-  - David Willis (size=2)
-  - Grace Weidmann (size=2)
-  - Finlay  Gillis (size=2)
-  - Matt Krynovich (size=2)
-
-Cluster 99 (4 families):
-  - Jared Lehman (size=2)
-  - Jeremy Myers (size=2)
-  - Natalia Bausch (size=2)
-  - Tyler Hoerner (size=2)
-
-Cluster 100 (1 families):
-  - Patrick  Aston  (size=2)
-
-Cluster 101 (2 families):
-  - Mark Nagel (size=2)
-  - Erik Larsen (size=4)
-
-Cluster 102 (1 families):
-  - Ryan Davenport (size=2)
-
-Cluster 103 (1 families):
-  - Joseph Boyer (size=4)
-
-Cluster 104 (1 families):
-  - Chris Spielhagen (size=3)
-
-Cluster 105 (1 families):
-  - David Brummels (size=2)
-
-Cluster 106 (1 families):
-  - Jason Spence (size=2)
-
-Cluster 107 (1 families):
+Cluster 98 (1 families):
   - Jeremy  Cannon (size=2)
 
-Cluster 108 (1 families):
+Cluster 99 (1 families):
+  - Jeff Klosky (size=3)
+
+Cluster 100 (1 families):
+  - Joseph Boyer (size=4)
+
+Cluster 101 (1 families):
+  - David Brummels (size=2)
+
+Cluster 102 (1 families):
   - Doug Howe (size=3)
 
-Cluster 109 (1 families):
+Cluster 103 (1 families):
+  - Derek Jones (size=3)
+
+Cluster 104 (1 families):
   - Devin Breese (size=3)
 
-Cluster 110 (1 families):
-  - Joel Brown (size=2)
+Cluster 105 (1 families):
+  - Drew Mau (size=2)
 
-Cluster 111 (1 families):
-  - Samuel Montoya (size=2)
+Cluster 106 (1 families):
+  - Enrique  Gonzalez  (size=2)
 
-Cluster 112 (1 families):
-  - Mike Reissig (size=2)
+Cluster 107 (1 families):
+  - Cowl Humphries (size=2)
 
-Cluster 113 (2 families):
+Cluster 108 (1 families):
+  - Jeff Lewis (size=2)
+
+Cluster 109 (2 families):
+  - Ben Brightwell (size=2)
+  - Erik Gustafson (size=3)
+
+Cluster 110 (2 families):
   - Eric Link (size=2)
   - Andrew Kaczka (size=2)
 
+Cluster 111 (1 families):
+  - Michael  Griffin (size=2)
+
+Cluster 112 (2 families):
+  - Jonathan  Mayles (size=2)
+  - Frank Djonbalaj (size=2)
+
+Cluster 113 (1 families):
+  - Toby Saben (size=3)
+
 Cluster 114 (1 families):
-  - Tom Scuderi (size=3)
+  - Elias Kunishige (size=2)
 
 Cluster 115 (2 families):
   - David Eaton (size=2)
   - Rob Oldach (size=2)
 
 Cluster 116 (1 families):
-  - Jeff Lewis (size=2)
-
-Cluster 117 (1 families):
-  - Toby Saben (size=3)
-
-Cluster 118 (1 families):
-  - Michael  Griffin (size=2)
-
-Cluster 119 (1 families):
-  - Enrique  Gonzalez  (size=2)
-
-Cluster 120 (1 families):
-  - Elias Kunishige (size=2)
-
-Cluster 121 (2 families):
-  - Jonathan  Mayles (size=2)
-  - Frank Djonbalaj (size=2)
-
-Cluster 122 (2 families):
-  - Ben Brightwell (size=2)
-  - Erik Gustafson (size=3)
-
-Cluster 123 (1 families):
-  - David Schaefer (size=2)
-
-Cluster 124 (1 families):
-  - Benjamin Valentin (size=2)
-
-Cluster 125 (1 families):
   - Mike Abriam (size=2)
 
-Cluster 126 (1 families):
+Cluster 117 (1 families):
+  - Mike Reissig (size=2)
+
+Cluster 118 (1 families):
+  - Benjamin Valentin (size=2)
+
+Cluster 119 (1 families):
+  - Samuel Montoya (size=2)
+
+Cluster 120 (1 families):
   - Richard Palmer (size=2)
 
-Cluster 127 (2 families):
+Cluster 121 (2 families):
   - Eric Hetzel (size=5)
   - John Epperly (size=3)
 
-Cluster 128 (1 families):
+Cluster 122 (1 families):
   - ADAM  VERI  (size=3)
 
-Cluster 129 (1 families):
+Cluster 123 (1 families):
   - Juan Vazquez (size=4)
 
-Cluster 130 (2 families):
-  - Jason Fink (size=2)
-  - Hayley  Eisenbeis (size=2)
+Cluster 124 (1 families):
+  - Donny Thurnherr (size=3)
 
-Cluster 131 (2 families):
-  - Rudi Mitutoiu (size=2)
-  - Michael Pickett (size=2)
-
-Cluster 132 (1 families):
+Cluster 125 (1 families):
   - Pete Albanese (size=2)
 
-Cluster 133 (1 families):
-  - Josh Johner (size=3)
-
-Cluster 134 (2 families):
+Cluster 126 (2 families):
   - Val LeMaire (size=2)
   - Elka Vitt (size=2)
 
-Cluster 135 (1 families):
-  - Seth Warren (size=2)
+Cluster 127 (1 families):
+  - Chris Howe (size=2)
 
-Cluster 136 (1 families):
+Cluster 128 (2 families):
+  - Jason Fink (size=2)
+  - Hayley  Eisenbeis (size=2)
+
+Cluster 129 (1 families):
+  - James Rickman (size=2)
+
+Cluster 130 (1 families):
   - Steve Scheller (size=2)
 
+Cluster 131 (1 families):
+  - Dante Giadone (size=2)
+
+Cluster 132 (1 families):
+  - Kevin Campbell (size=3)
+
+Cluster 133 (1 families):
+  - Jay Haddix (size=2)
+
+Cluster 134 (1 families):
+  - Josh Johner (size=3)
+
+Cluster 135 (1 families):
+  - Kenny Knapp (size=2)
+
+Cluster 136 (2 families):
+  - Caleb Lambert (size=2)
+  - Nathan Merrill (size=2)
+
 Cluster 137 (1 families):
-  - Robert Burton (size=2)
+  - Seth Warren (size=2)
 
 Cluster 138 (1 families):
-  - Dante Giadone (size=2)
+  - Mike Peterson (size=2)
 
 Cluster 139 (1 families):
   - Herman  Lucero (size=2)
 
-Cluster 140 (1 families):
-  - James Rickman (size=2)
+Cluster 140 (2 families):
+  - Rudi Mitutoiu (size=2)
+  - Michael Pickett (size=2)
 
 Cluster 141 (1 families):
-  - Mike Peterson (size=2)
+  - Robert Burton (size=2)
 
 Cluster 142 (1 families):
-  - Kenny Knapp (size=2)
+  - Johnnie Genser (size=2)
 
 Cluster 143 (1 families):
-  - Nick Ragain (size=2)
+  - Chris Han (size=2)
 
 Cluster 144 (1 families):
-  - Chris Howe (size=2)
+  - Shane Dickey (size=2)
 
-Cluster 145 (1 families):
-  - Kevin Campbell (size=3)
-
-Cluster 146 (1 families):
-  - Jay Haddix (size=2)
-
-Cluster 147 (2 families):
-  - Caleb Lambert (size=2)
-  - Nathan Merrill (size=2)
-
-Cluster 148 (1 families):
-  - Donny Thurnherr (size=3)
-
-Cluster 149 (1 families):
-  - Damian Friend (size=2)
-
-Cluster 150 (1 families):
-  - Joe Trechter (size=2)
-
-Cluster 151 (2 families):
+Cluster 145 (2 families):
   - Matthew  Powell (size=2)
   - Eric  Yeager (size=2)
 
-Cluster 152 (2 families):
+Cluster 146 (1 families):
+  - Steven Walsh (size=2)
+
+Cluster 147 (1 families):
+  - Ryan  Plunkett (size=2)
+
+Cluster 148 (2 families):
   - Chris Giovagnoni (size=2)
   - Aylah Tschamler (size=2)
 
-Cluster 153 (1 families):
-  - Chris Han (size=2)
-
-Cluster 154 (1 families):
-  - Nathan  Pearsall  (size=2)
-
-Cluster 155 (1 families):
+Cluster 149 (1 families):
   - Jacob Flood (size=2)
 
-Cluster 156 (1 families):
-  - Johnnie Genser (size=2)
-
-Cluster 157 (1 families):
-  - Jesus Jordan (size=3)
-
-Cluster 158 (1 families):
-  - Shane Dickey (size=2)
-
-Cluster 159 (1 families):
-  - Ryan  Plunkett (size=2)
-
-Cluster 160 (1 families):
-  - Paul  Jensen (size=2)
-
-Cluster 161 (1 families):
-  - Zachary Stanley (size=2)
-
-Cluster 162 (1 families):
+Cluster 150 (1 families):
   - Steven Hoskins (size=2)
 
-Cluster 163 (1 families):
+Cluster 151 (1 families):
+  - Daniel LeBaron (size=3)
+
+Cluster 152 (1 families):
+  - Nathan  Pearsall  (size=2)
+
+Cluster 153 (1 families):
+  - Damian Friend (size=2)
+
+Cluster 154 (1 families):
   - SCOTT Wasik (size=3)
 
-Cluster 164 (2 families):
-  - Ted Schmid (size=2)
+Cluster 155 (1 families):
+  - Jesus Jordan (size=3)
+
+Cluster 156 (1 families):
+  - Marcus Ellis (size=4)
+
+Cluster 157 (1 families):
+  - Rick Peterson (size=2)
+
+Cluster 158 (2 families):
   - Paul A. Krause (size=2)
+  - Ted Schmid (size=2)
 
-Cluster 165 (1 families):
-  - Anthony Wise (size=2)
+Cluster 159 (1 families):
+  - Marcus McFarland (size=2)
 
-Cluster 166 (1 families):
-  - Matt Devine (size=3)
+Cluster 160 (1 families):
+  - Chaim Goldman (size=2)
 
-Cluster 167 (3 families):
+Cluster 161 (1 families):
+  - Christian Rebugio (size=3)
+
+Cluster 162 (1 families):
+  - Jared May (size=2)
+
+Cluster 163 (1 families):
+  - Keith Howard (size=2)
+
+Cluster 164 (2 families):
+  - Jeff Holck (size=2)
+  - Neal Oseland (size=2)
+
+Cluster 165 (3 families):
   - Jose Martinez (size=2)
   - Kaylee Castellini (size=2)
   - Seth  Shaver (size=3)
 
-Cluster 168 (1 families):
-  - Christian Rebugio (size=3)
+Cluster 166 (1 families):
+  - Anthony Wise (size=2)
 
-Cluster 169 (1 families):
-  - Jared May (size=2)
-
-Cluster 170 (1 families):
-  - Rodger Scriven (size=3)
-
-Cluster 171 (1 families):
-  - Marcus McFarland (size=2)
-
-Cluster 172 (1 families):
-  - Keith Howard (size=2)
-
-Cluster 173 (1 families):
+Cluster 167 (1 families):
   - Luis Ortiz Rodriguez (size=2)
 
-Cluster 174 (1 families):
-  - Brian Bozarth (size=3)
+Cluster 168 (1 families):
+  - Matt Devine (size=3)
 
-Cluster 175 (1 families):
+Cluster 169 (1 families):
+  - Rodger Scriven (size=3)
+
+Cluster 170 (1 families):
   - Josh Vogt (size=3)
 
-Cluster 176 (1 families):
-  - Patrick Barrett (size=2)
+Cluster 171 (1 families):
+  - Sandor Csikesz (size=3)
 
-Cluster 177 (1 families):
-  - Kevin Baron (size=2)
+Cluster 172 (1 families):
+  - Brian Bozarth (size=3)
 
-Cluster 178 (1 families):
-  - Scott Bond (size=2)
-
-Cluster 179 (1 families):
-  - Josh Chesebro (size=2)
-
-Cluster 180 (2 families):
-  - Grove Higgins (size=2)
-  - Kaitlin Michael  (size=2)
-
-Cluster 181 (1 families):
-  - Jeff Thomas (size=2)
-
-Cluster 182 (1 families):
-  - Tim Miles (size=2)
-
-Cluster 183 (1 families):
+Cluster 173 (1 families):
   - Jason Greer (size=2)
 
-Cluster 184 (1 families):
-  - Don Harms (size=2)
+Cluster 174 (1 families):
+  - Tim Miles (size=2)
 
-Cluster 185 (2 families):
+Cluster 175 (1 families):
+  - Scott Bond (size=2)
+
+Cluster 176 (1 families):
+  - Kevin Baron (size=2)
+
+Cluster 177 (2 families):
   - Ryan halla (size=2)
   - Matt Meister (size=2)
 
-Cluster 186 (1 families):
+Cluster 178 (1 families):
+  - Don Harms (size=2)
+
+Cluster 179 (1 families):
+  - Jeff Thomas (size=2)
+
+Cluster 180 (1 families):
+  - Josh Chesebro (size=2)
+
+Cluster 181 (1 families):
   - Mike Evans (size=3)
 
-Cluster 187 (1 families):
+Cluster 182 (1 families):
   - Marcus Button (size=5)
 
-Cluster 188 (1 families):
+Cluster 183 (1 families):
   - David Nevarez (size=3)
 
-Cluster 189 (1 families):
-  - Chad Mathis (size=2)
+Cluster 184 (1 families):
+  - Hugo Bruciaga (size=3)
+
+Cluster 185 (1 families):
+  - Erik Talamantes (size=2)
+
+Cluster 186 (1 families):
+  - Scott Heyler (size=2)
+
+Cluster 187 (1 families):
+  - Mike Aubert (size=2)
+
+Cluster 188 (1 families):
+  - Dave Mortell (size=2)
+
+Cluster 189 (2 families):
+  - Marshal Brown (size=2)
+  - Brad Githens (size=2)
 
 Cluster 190 (1 families):
-  - Mike Aubert (size=2)
+  - Chad Mathis (size=2)
 
 Cluster 191 (1 families):
   - Kirk Cameron (size=2)
 
-Cluster 192 (2 families):
-  - Marshal Brown (size=2)
-  - Brad Githens (size=2)
-
-Cluster 193 (1 families):
-  - Scott Heyler (size=2)
-
-Cluster 194 (1 families):
-  - Erik Talamantes (size=2)
-
-Cluster 195 (1 families):
-  - Dave Mortell (size=2)
-
-Cluster 196 (1 families):
+Cluster 192 (1 families):
   - Matt Greene (size=3)
 
-Cluster 197 (1 families):
+Cluster 193 (1 families):
   - Ron Hardman (size=4)
 
-Cluster 198 (1 families):
-  - Steve  Mitchell (size=3)
-
-Cluster 199 (1 families):
+Cluster 194 (1 families):
   - David Ragsdill (size=2)
 
-Cluster 200 (1 families):
+Cluster 195 (1 families):
+  - Steve  Mitchell (size=3)
+
+Cluster 196 (1 families):
   - Mark Walp (size=2)
 
-Cluster 201 (2 families):
+Cluster 197 (1 families):
+  - Steve Lepine (size=3)
+
+Cluster 198 (1 families):
+  - Steven Carlson (size=2)
+
+Cluster 199 (1 families):
+  - Jacque Joffrion (size=2)
+
+Cluster 200 (2 families):
   - Rudy  Avila (size=2)
   - Michael Taylor  (size=2)
 
-Cluster 202 (1 families):
-  - Steve Lepine (size=3)
-
-Cluster 203 (1 families):
-  - Steven Carlson (size=2)
-
-Cluster 204 (1 families):
-  - Jacque Joffrion (size=2)
-
-Cluster 205 (1 families):
-  - Jeff Stahl (size=2)
-
-Cluster 206 (1 families):
-  - Neal Oseland (size=2)
-
-Cluster 207 (1 families):
+Cluster 201 (1 families):
   - Brian Plaisted (size=2)
 
-Cluster 208 (1 families):
+Cluster 202 (1 families):
   - Strings Kozisek (size=2)
 
-Cluster 209 (1 families):
+Cluster 203 (1 families):
+  - Shannon Cotten (size=2)
+
+Cluster 204 (1 families):
+  - Jeff Stahl (size=2)
+
+Cluster 205 (1 families):
   - Robert Deis (size=2)
 
-Cluster 210 (1 families):
+Cluster 206 (1 families):
   - Jeff Casey (size=2)
 
-Cluster 211 (1 families):
-  - Jason laffler Jason laffler (size=3)
-
-Cluster 212 (1 families):
+Cluster 207 (1 families):
   - David Fisher (size=2)
 
-Cluster 213 (1 families):
-  - Megan Law (size=2)
+Cluster 208 (1 families):
+  - Jason laffler Jason laffler (size=3)
 
-Cluster 214 (1 families):
+Cluster 209 (1 families):
   - Evelyn Smith (size=3)
 
-Cluster 215 (1 families):
-  - Blake Schwank (size=2)
+Cluster 210 (1 families):
+  - Mark  Baroni (size=4)
 
-Cluster 216 (1 families):
+Cluster 211 (1 families):
   - Mel Wernimont (size=3)
 
-Cluster 217 (2 families):
+Cluster 212 (1 families):
+  - Blake Schwank (size=2)
+
+Cluster 213 (2 families):
   - mark stieber (size=2)
   - Sarah Osterman (size=2)
 
-Cluster 218 (2 families):
+Cluster 214 (2 families):
   - George Gaugler (size=5)
   - Everly  Slone (size=2)
 
-Cluster 219 (1 families):
+Cluster 215 (1 families):
   - Gregory Garcia (size=5)
 
-Cluster 220 (1 families):
+Cluster 216 (1 families):
   - Mark Burr (size=4)
 
-Cluster 221 (1 families):
-  - Marcelo Garcia (size=2)
-
-Cluster 222 (1 families):
+Cluster 217 (1 families):
   - Bernie  Vitale (size=4)
 
-Cluster 223 (1 families):
+Cluster 218 (1 families):
   - Tad Kubacka (size=5)
 
-Cluster 224 (1 families):
+Cluster 219 (1 families):
+  - Anthony Shadbolt I (size=3)
+
+Cluster 220 (1 families):
   - CHAPPY Watties (size=2)
 
-Cluster 225 (1 families):
+Cluster 221 (1 families):
   - Andrew  Wright (size=3)
 
-Cluster 226 (1 families):
-  - Leilah Wells (size=2)
-
-Cluster 227 (1 families):
+Cluster 222 (1 families):
   - Eire  DeZalia (size=2)
 
-Cluster 228 (1 families):
+Cluster 223 (1 families):
+  - Leilah Wells (size=2)
+
+Cluster 224 (1 families):
   - Madison Young (size=2)
 
-Cluster 229 (1 families):
-  - Allyson Larsen (size=2)
-
-Cluster 230 (1 families):
-  - Kennedy Kinard (size=2)
-
-Cluster 231 (1 families):
+Cluster 225 (1 families):
   - Ava Netzler (size=2)
 
-Cluster 232 (1 families):
+Cluster 226 (1 families):
+  - Allyson Larsen (size=2)
+
+Cluster 227 (1 families):
+  - Kennedy Kinard (size=2)
+
+Cluster 228 (1 families):
   - Alexis Fitzgerald (size=2)
 
-Cluster 233 (1 families):
-  - Aliyah Frese (size=2)
-
-Cluster 234 (1 families):
+Cluster 229 (1 families):
   - Audrey O'Boyle (size=2)
 
-Cluster 235 (1 families):
+Cluster 230 (1 families):
+  - Aliyah Frese (size=2)
+
+Cluster 231 (1 families):
   - Clara Boydstun (size=2)
 
-Cluster 236 (1 families):
+Cluster 232 (1 families):
   - Rileyanna Clark (size=2)
 
-Cluster 237 (1 families):
+Cluster 233 (1 families):
   - Jenna Moor (size=2)
 
-Cluster 238 (1 families):
-  - Delaney  Korte  (size=2)
-
-Cluster 239 (1 families):
+Cluster 234 (1 families):
   - Chloe Cooper (size=2)
 
-Cluster 240 (1 families):
+Cluster 235 (1 families):
+  - Delaney  Korte  (size=2)
+
+Cluster 236 (1 families):
   - Brianna Thomad (size=2)
 
-Cluster 241 (1 families):
+Cluster 237 (1 families):
+  - Kylie  Jones (size=2)
+
+Cluster 238 (1 families):
   - Beth Burns (size=2)
 
+Cluster 239 (1 families):
+  - Sean Briggs (size=2)
+
+Cluster 240 (1 families):
+  - Alexin Kleski (size=2)
+
+Cluster 241 (1 families):
+  - Charlie Johnson (size=2)
+
 Cluster 242 (1 families):
-  - Travis Easton (size=3)
+  - Dereck  Fisher  (size=2)
 
 Cluster 243 (1 families):
-  - Michael  Dunn (size=1)
+  - Travis Easton (size=3)
 
 Cluster 244 (1 families):
-  - Kenneth Serfas (size=2)
+  - Tim Sparks (size=2)
 
 Cluster 245 (1 families):
-  - Lily Amerine (size=2)
+  - Kenneth Serfas (size=2)
 
 Cluster 246 (1 families):
-  - Brandan Lloyd (size=3)
+  - Maya Uribe (size=2)
 
 Cluster 247 (1 families):
   - Paul Aragon (size=2)
 
 Cluster 248 (1 families):
-  - Dereck  Fisher  (size=2)
-
-Cluster 249 (1 families):
-  - Christopher Armenta (size=2)
-
-Cluster 250 (1 families):
   - Vuongvu Le (size=2)
 
+Cluster 249 (1 families):
+  - Ralph Mills (size=2)
+
+Cluster 250 (1 families):
+  - Dan Shelton (size=2)
+
 Cluster 251 (1 families):
-  - Liam McArdle (size=2)
+  - Christopher Armenta (size=2)
 
 Cluster 252 (1 families):
-  - Gabe Salazar (size=2)
+  - Thomas Pisculli (size=2)
 
 Cluster 253 (1 families):
-  - Stephen Girlando (size=2)
+  - Lily Amerine (size=2)
 
 Cluster 254 (1 families):
-  - Sean Briggs (size=2)
+  - Stephen Girlando (size=2)
 
 Cluster 255 (1 families):
-  - Shannon Cotten (size=1)
-
-Cluster 256 (1 families):
-  - Tim Sparks (size=2)
-
-Cluster 257 (1 families):
-  - Charlie Johnson (size=2)
-
-Cluster 258 (1 families):
-  - Alexin Kleski (size=2)
-
-Cluster 259 (1 families):
-  - Maya Uribe (size=2)
-
-Cluster 260 (1 families):
-  - Javon Hughes  (size=1)
-
-Cluster 261 (1 families):
-  - Chris  Clay (size=2)
+  - Gabe Salazar (size=2)
 
 ================
 
@@ -1285,508 +1327,644 @@ Cluster 261 (1 families):
   Table 0:
     - Todd Smith (size 2)
     - Jason Jorgenson (size 2)
-    - Jeremy  Ferranti  (size 2)
     - Madison Banks (size 2)
     - Ron Fitch (size 2)
+    - Benito Huron (size 2)
 
 ==================== AREA 1 ====================
   Table 0:
+    - Jeremy  Ferranti  (size 2)
+    - Luke Vercollone (size 4)
+    - Victor Iacobbo (size 2)
+    - Robert Farris (size 2)
+  Table 1:
+    - David Theis (size 2)
+    - Marcelo Garcia (size 2)
+    - Grove Higgins (size 2)
+    - Matthew Bowen (size 2)
+    - Joe Trechter (size 2)
+  Table 2:
+    - Chris  Clay (size 2)
+    - Zachary Stanley (size 2)
+    - Paul  Jensen (size 2)
+    - Joel Brown (size 2)
+    - Branden Felker (size 2)
+  Table 3:
+    - Andrew Phizacklea (size 4)
+    - Tom Waits (size 4)
+    - Cody Aufrichtig (size 2)
+  Table 4:
+    - JP West (size 2)
+    - Clare Falls (size 2)
+    - David Schaefer (size 2)
+    - Rick Zellen (size 3)
+  Table 5:
+    - Joshua Durow (size 3)
+    - Ryan Avery (size 2)
+    - Alejandro Lugo (size 2)
+    - Patrick Barrett (size 2)
+  Table 6:
+    - Hector Cardenas (size 4)
+    - Chad Keirns (size 2)
+    - Levi Durow (size 2)
+    - Steve Slifka (size 2)
+  Table 7:
+    - Eric Kniffin (size 5)
+    - Bill Schutz (size 4)
+  Table 8:
     - Collin Wright (size 2)
+    - Yemi Mobolade (size 2)
+    - Liam McArdle (size 2)
+    - Bradley Pierson (size 3)
+  Table 9:
+    - Kaitlin Michael  (size 2)
+    - Ted Dibble (size 2)
     - Jayce Wright (size 2)
+    - Tyler Hoerner (size 2)
+    - Jared Lehman (size 2)
+  Table 10:
     - Matt Hepp (size 3)
     - Andrew Judkins (size 2)
+    - Natalia Bausch (size 2)
+    - Jeremy Myers (size 2)
 
 ==================== AREA 2 ====================
   Table 0:
     - Robert Ramirez (size 2)
     - Analisia  Ramirez  (size 3)
-    - James Ragain (size 2)
-    - Adam Robinson (size 2)
+    - Ahmad Whiting (size 2)
+    - Gabriel BALLATORE (size 2)
 
 ==================== AREA 3 ====================
   Table 0:
     - Ryan Tyng (size 2)
     - Abigail  White (size 2)
-    - Jay  Underwood (size 2)
     - Karl Biermann (size 2)
     - Stephen Cordova (size 2)
+    - Luis Pacheco (size 2)
   Table 1:
     - Micheal Cordova (size 3)
-    - Luis Pacheco (size 2)
-    - Gabriel BALLATORE (size 2)
-    - Kalani Schreiner  (size 2)
+    - Jay  Underwood (size 2)
+    - James Ragain (size 2)
+    - Nick Ragain (size 2)
 
 ==================== AREA 4 ====================
   Table 0:
-    - David Theis (size 2)
-    - Tom Waits (size 4)
-    - Hector Cardenas (size 4)
-  Table 1:
-    - Joshua Durow (size 3)
-    - Levi Durow (size 2)
-    - Ted Dibble (size 2)
-    - Matthew Roberts (size 2)
+    - Adam Robinson (size 2)
+    - Kalani Schreiner  (size 2)
+    - Jeffrey Wheaton (size 2)
+    - Chris Curlette (size 2)
+    - Ryan Prickett (size 2)
 
 ==================== AREA 5 ====================
   Table 0:
-    - Yemi Mobolade (size 2)
-    - Alejandro Lugo (size 2)
-    - Steve Slifka (size 2)
-    - Benito Huron (size 2)
-    - Chris Curlette (size 2)
+    - Christopher Jones (size 2)
+    - Jessica Schrader (size 2)
+    - Robert Shea (size 2)
+    - Matthew Roberts (size 2)
+    - Jordan Zielinski (size 2)
 
 ==================== AREA 6 ====================
   Table 0:
-    - Christopher Jones (size 2)
-    - Nick Kundert (size 3)
-    - Jessica Schrader (size 2)
-    - Nathan Fisk (size 3)
-  Table 1:
-    - Jake Jones (size 2)
-    - Derek Jones (size 3)
-    - Michael Jones (size 3)
-    - Bradley Nathan (size 2)
-  Table 2:
-    - David Adkinson (size 3)
-    - Kylie  Jones (size 2)
-    - Sydney Craig (size 2)
-    - Lizzie Breau (size 2)
-
-==================== AREA 7 ====================
-  Table 0:
-    - Matthew Bowen (size 2)
     - Dan Perkins (size 2)
     - Jeff Morris (size 2)
     - Joel Helzer (size 2)
     - Joel Armani (size 2)
+    - Paul Gamache (size 2)
+
+==================== AREA 7 ====================
+  Table 0:
+    - Michael Jones (size 3)
+    - Isaac Chung (size 2)
+    - Toan Chung (size 2)
+    - Vinh Chung (size 2)
 
 ==================== AREA 8 ====================
   Table 0:
-    - Toan Chung (size 2)
-    - Isaac Chung (size 2)
-    - Vinh Chung (size 2)
-    - David Baumgartner (size 2)
     - Justin Weiler (size 2)
+    - David Baumgartner (size 2)
+    - Mark Wiebenga (size 2)
+    - Lorenzo Roybal (size 2)
+    - Nathan Raymond  (size 2)
 
 ==================== AREA 9 ====================
   Table 0:
-    - Kurt Schumaker (size 2)
-    - Mikayla Elizabeth (size 1)
-    - Michael Smoot (size 2)
-    - Dan Jeltes (size 2)
-    - Chris  Kirk (size 2)
-    - Charles Rodgers (size 1)
+    - Christopher Smith (size 3)
+    - Chris Evans (size 2)
+    - Luke Redmon (size 2)
+    - Joel  Malick (size 2)
 
 ==================== AREA 10 ====================
   Table 0:
-    - Jordan Zielinski (size 2)
-    - Branden Felker (size 2)
-    - Christopher Smith (size 3)
     - Britt James (size 2)
+    - Marcus Valone (size 3)
+    - J.R. Gonzales (size 2)
+    - James Majors (size 2)
+  Table 1:
+    - David Bird (size 2)
+    - Ryan Gonzales (size 2)
+    - Sean OMalley  (size 2)
+    - Marcus Yanez (size 4)
+  Table 2:
+    - Terence Jackson (size 2)
+    - Christopher Jackson (size 3)
+    - Blake Williams (size 2)
+    - Alex Romano (size 2)
+  Table 3:
+    - MARCOS CHAVEZ (size 2)
+    - Mike  Brumbaugh (size 2)
+    - Saul McGirr (size 2)
+    - Tye Ragsdale (size 4)
+  Table 4:
+    - Sal Mancini (size 2)
+    - John Hilborn (size 2)
+    - Nick Parise (size 4)
+    - Randall  Gerry (size 2)
+  Table 5:
+    - Jeff Schwarzentraub (size 3)
+    - Taylor OLeary (size 2)
+    - Joseph Steiger (size 2)
+    - Adam Roberts (size 2)
 
 ==================== AREA 11 ====================
-  Table 0:
-    - Luke Redmon (size 2)
-    - Chris Evans (size 2)
-    - Taylor OLeary (size 2)
-    - Adam Roberts (size 2)
-    - Ryan Prickett (size 2)
-
-==================== AREA 12 ====================
-  Table 0:
-    - Mark Wiebenga (size 2)
-    - Lorenzo Roybal (size 2)
-    - Joseph Steiger (size 2)
-    - Joel  Malick (size 2)
-    - Ryan Avery (size 2)
-
-==================== AREA 13 ====================
   Table 0:
     - Michael Chandler (size 2)
     - Michael Spain (size 7)
 
-==================== AREA 14 ====================
+==================== AREA 12 ====================
   Table 0:
+    - Kurt Schumaker (size 2)
+    - Adam Smoot (size 4)
+    - Dan Jeltes (size 2)
+    - Michael Smoot (size 2)
+  Table 1:
+    - Chris  Kirk (size 2)
+    - Blake Horn (size 2)
     - Daniel Dutro (size 3)
     - Elias Ursitti (size 2)
+
+==================== AREA 13 ====================
+  Table 0:
+    - Brett Gibson (size 2)
+    - Rajeev Shaw (size 2)
     - Justin Von Hofe  (size 2)
     - Steve Foltz (size 2)
+    - Eric Boogaard (size 2)
+
+==================== AREA 14 ====================
+  Table 0:
+    - John Kraft (size 2)
+    - Felipe  Perez  (size 2)
+    - Jeremiah Ardilla (size 2)
+    - Javon Hughes  (size 1)
+    - Josh Crotser (size 3)
 
 ==================== AREA 15 ====================
+  Table 0:
+    - Aaron Pennington (size 2)
+    - Lucas Lafferty  (size 2)
+    - Kyle McCullough (size 2)
+    - Luis  Garcia (size 2)
+    - Pete Bogart (size 2)
+
+==================== AREA 16 ====================
   Table 0:
     - Jeremy Brown (size 2)
     - Matt  Gowler (size 3)
     - Brian Gould (size 2)
-    - Josh Crotser (size 3)
-
-==================== AREA 16 ====================
-  Table 0:
-    - Ronny Webb (size 2)
-    - christopher ames (size 5)
-    - Lucas Lafferty  (size 2)
+    - Seth Devine (size 2)
 
 ==================== AREA 17 ====================
   Table 0:
-    - Brett Gibson (size 2)
-    - Rajeev Shaw (size 2)
-    - Seth Devine (size 2)
-    - Travis Gale (size 2)
-    - Paul Gamache (size 2)
+    - Ronny Webb (size 2)
+    - christopher ames (size 5)
+    - Cory  Adkisson (size 2)
 
 ==================== AREA 18 ====================
   Table 0:
-    - Terence Jackson (size 2)
-    - Alex Romano (size 2)
-    - Ryan Gonzales (size 2)
-    - Marcus Yanez (size 4)
-  Table 1:
-    - Christopher Jackson (size 3)
-    - Marcus Valone (size 3)
-    - Blake Williams (size 2)
-    - David Bird (size 2)
-  Table 2:
-    - J.R. Gonzales (size 2)
-    - MARCOS CHAVEZ (size 2)
-    - Sean OMalley  (size 2)
-    - Mike  Brumbaugh (size 2)
-    - John Hilborn (size 2)
-  Table 3:
-    - Jeff Schwarzentraub (size 3)
-    - Saul McGirr (size 2)
-    - Tye Ragsdale (size 4)
-    - Michael  Dunn (size 1)
-  Table 4:
-    - Nick Parise (size 4)
-    - Sal Mancini (size 2)
-    - Pedro Benavides (size 3)
-    - Shannon Cotten (size 1)
-  Table 5:
-    - Kyle McCullough (size 2)
     - Petie Kinder (size 2)
-    - Luis  Garcia (size 2)
-    - Andrew Phizacklea (size 4)
-  Table 6:
-    - Nathan Raymond  (size 2)
-    - Aaron Pennington (size 2)
-    - Cory  Adkisson (size 2)
-    - Cody Aufrichtig (size 2)
-    - Eric Boogaard (size 2)
-  Table 7:
-    - Bryan Rodriguerz (size 2)
+    - Pedro Benavides (size 3)
+    - Travis Gale (size 2)
     - Ricky Conner (size 2)
-    - Camron Griego (size 2)
-    - Matthew Glenn (size 2)
-    - Izzy Hayden (size 2)
-  Table 8:
-    - Jacob McMurphy (size 2)
-    - Walter Lang (size 2)
-    - Andrew Lavoie (size 2)
-    - Matthew Whitt (size 2)
-    - Danika Reinhard (size 2)
-  Table 9:
-    - Nathan  Seward (size 2)
-    - Matthew Bean (size 2)
-    - Danny  Packard  (size 3)
-    - Carlton Whitehead (size 2)
-    - Javon Hughes  (size 1)
-  Table 10:
-    - James  Gottry (size 2)
-    - Chad Keirns (size 2)
-    - Clare Falls (size 2)
-    - Anthony Giusto (size 2)
-    - Andy Martin (size 2)
-  Table 11:
-    - Andre Lavoie (size 2)
-    - Tyler  Dexter (size 2)
-    - Grady Dacus (size 3)
-    - Kevin Ridenour (size 2)
-  Table 12:
-    - John Jennings (size 2)
-    - Chris DeMary (size 2)
-    - Nicholas Eimer (size 2)
-    - Luke Vercollone (size 4)
-  Table 13:
-    - Rick Zellen (size 3)
-    - Eric Ruettinger (size 3)
-    - Malea  Heeter (size 2)
-    - James Schlueter (size 2)
-  Table 14:
-    - Jeff Klosky (size 3)
-    - Corey Wiederholt (size 2)
-    - Jared Lehman (size 2)
-    - Jeremy Myers (size 2)
-  Table 15:
-    - Natalia Bausch (size 2)
-    - Tyler Hoerner (size 2)
-    - Patrick  Aston  (size 2)
-    - Mark Nagel (size 2)
-    - Ryan Davenport (size 2)
-  Table 16:
-    - Erik Larsen (size 4)
-    - Joseph Boyer (size 4)
-    - David Brummels (size 2)
-  Table 17:
-    - Chris Spielhagen (size 3)
-    - Jason Spence (size 2)
-    - Jeremy  Cannon (size 2)
-    - Doug Howe (size 3)
-  Table 18:
-    - Joel Brown (size 2)
-    - Samuel Montoya (size 2)
-    - Mike Reissig (size 2)
-    - Eric Link (size 2)
-    - Andrew Kaczka (size 2)
-  Table 19:
-    - Tom Scuderi (size 3)
-    - David Eaton (size 2)
-    - Rob Oldach (size 2)
-    - Jeff Lewis (size 2)
-  Table 20:
-    - Toby Saben (size 3)
-    - Michael  Griffin (size 2)
-    - Enrique  Gonzalez  (size 2)
-    - Elias Kunishige (size 2)
-  Table 21:
-    - Jonathan  Mayles (size 2)
-    - Frank Djonbalaj (size 2)
-    - Ben Brightwell (size 2)
-    - Erik Gustafson (size 3)
-  Table 22:
-    - David Schaefer (size 2)
-    - Benjamin Valentin (size 2)
-    - Mike Abriam (size 2)
-    - Richard Palmer (size 2)
-    - Jason Fink (size 2)
-  Table 23:
-    - Eric Hetzel (size 5)
-    - John Epperly (size 3)
-    - Hayley  Eisenbeis (size 2)
-  Table 24:
-    - ADAM  VERI  (size 3)
-    - Juan Vazquez (size 4)
-    - Rudi Mitutoiu (size 2)
-  Table 25:
-    - Michael Pickett (size 2)
-    - Pete Albanese (size 2)
-    - Josh Johner (size 3)
-    - Val LeMaire (size 2)
-  Table 26:
-    - Elka Vitt (size 2)
-    - Seth Warren (size 2)
-    - Steve Scheller (size 2)
-    - Robert Burton (size 2)
-    - Dante Giadone (size 2)
-  Table 27:
-    - Herman  Lucero (size 2)
-    - James Rickman (size 2)
-    - Mike Peterson (size 2)
-    - Kenny Knapp (size 2)
-    - Nick Ragain (size 2)
-  Table 28:
-    - Chris Howe (size 2)
-    - Kevin Campbell (size 3)
-    - Jay Haddix (size 2)
-    - Caleb Lambert (size 2)
-  Table 29:
-    - Nathan Merrill (size 2)
-    - Donny Thurnherr (size 3)
-    - Damian Friend (size 2)
-    - Joe Trechter (size 2)
-  Table 30:
-    - Matthew  Powell (size 2)
-    - Eric  Yeager (size 2)
-    - Chris Giovagnoni (size 2)
-    - Aylah Tschamler (size 2)
-    - Chris Han (size 2)
-  Table 31:
-    - Nathan  Pearsall  (size 2)
-    - Jacob Flood (size 2)
-    - Johnnie Genser (size 2)
-    - Jesus Jordan (size 3)
-  Table 32:
-    - Shane Dickey (size 2)
-    - Ryan  Plunkett (size 2)
-    - Paul  Jensen (size 2)
-    - Zachary Stanley (size 2)
-    - Steven Hoskins (size 2)
-  Table 33:
-    - SCOTT Wasik (size 3)
-    - Ted Schmid (size 2)
-    - Paul A. Krause (size 2)
-    - Anthony Wise (size 2)
-  Table 34:
-    - Matt Devine (size 3)
-    - Jose Martinez (size 2)
-    - Kaylee Castellini (size 2)
-    - Seth  Shaver (size 3)
-  Table 35:
-    - Christian Rebugio (size 3)
-    - Jared May (size 2)
-    - Rodger Scriven (size 3)
-    - Marcus McFarland (size 2)
-  Table 36:
-    - Keith Howard (size 2)
-    - Luis Ortiz Rodriguez (size 2)
-    - Brian Bozarth (size 3)
-    - Josh Vogt (size 3)
-  Table 37:
-    - Patrick Barrett (size 2)
-    - Kevin Baron (size 2)
-    - Scott Bond (size 2)
-    - Josh Chesebro (size 2)
-    - Grove Higgins (size 2)
-  Table 38:
-    - Kaitlin Michael  (size 2)
-    - Jeff Thomas (size 2)
-    - Tim Miles (size 2)
-    - Jason Greer (size 2)
-    - Don Harms (size 2)
-  Table 39:
-    - Ryan halla (size 2)
-    - Matt Meister (size 2)
-    - Mike Evans (size 3)
-    - David Nevarez (size 3)
-  Table 40:
-    - Marcus Button (size 5)
-    - Chad Mathis (size 2)
-    - Mike Aubert (size 2)
-  Table 41:
-    - Kirk Cameron (size 2)
-    - Marshal Brown (size 2)
-    - Brad Githens (size 2)
-    - Scott Heyler (size 2)
-    - Erik Talamantes (size 2)
-  Table 42:
-    - Dave Mortell (size 2)
-    - Matt Greene (size 3)
-    - Ron Hardman (size 4)
-  Table 43:
-    - Steve  Mitchell (size 3)
-    - David Ragsdill (size 2)
-    - Mark Walp (size 2)
-    - Rudy  Avila (size 2)
-  Table 44:
-    - Michael Taylor  (size 2)
-    - Steve Lepine (size 3)
-    - Steven Carlson (size 2)
-    - Jacque Joffrion (size 2)
-  Table 45:
-    - Jeff Stahl (size 2)
-    - Neal Oseland (size 2)
-    - Brian Plaisted (size 2)
-    - Strings Kozisek (size 2)
-    - Robert Deis (size 2)
-  Table 46:
-    - Jeff Casey (size 2)
-    - Jason laffler Jason laffler (size 3)
-    - David Fisher (size 2)
-    - Megan Law (size 2)
-  Table 47:
-    - Evelyn Smith (size 3)
-    - Blake Schwank (size 2)
-    - Mel Wernimont (size 3)
-    - mark stieber (size 2)
-  Table 48:
-    - Sarah Osterman (size 2)
-    - George Gaugler (size 5)
-    - Everly  Slone (size 2)
-  Table 49:
-    - Gregory Garcia (size 5)
-    - Mark Burr (size 4)
-  Table 50:
-    - Marcelo Garcia (size 2)
-    - Bernie  Vitale (size 4)
-    - CHAPPY Watties (size 2)
-    - Leilah Wells (size 2)
-  Table 51:
-    - Tad Kubacka (size 5)
-    - Andrew  Wright (size 3)
-    - Eire  DeZalia (size 2)
-  Table 52:
-    - Madison Young (size 2)
-    - Allyson Larsen (size 2)
-    - Kennedy Kinard (size 2)
-    - Ava Netzler (size 2)
-    - Alexis Fitzgerald (size 2)
-  Table 53:
-    - Aliyah Frese (size 2)
-    - Audrey O'Boyle (size 2)
-    - Clara Boydstun (size 2)
-    - Rileyanna Clark (size 2)
-    - Jenna Moor (size 2)
-  Table 54:
-    - Delaney  Korte  (size 2)
-    - Chloe Cooper (size 2)
-    - Brianna Thomad (size 2)
-    - Beth Burns (size 2)
-    - Kenneth Serfas (size 2)
-  Table 55:
-    - Travis Easton (size 3)
-    - Lily Amerine (size 2)
-    - Brandan Lloyd (size 3)
-    - Paul Aragon (size 2)
-  Table 56:
-    - Dereck  Fisher  (size 2)
-    - Christopher Armenta (size 2)
-    - Vuongvu Le (size 2)
-    - Liam McArdle (size 2)
-    - Gabe Salazar (size 2)
-  Table 57:
-    - Stephen Girlando (size 2)
-    - Sean Briggs (size 2)
-    - Tim Sparks (size 2)
-    - Charlie Johnson (size 2)
-    - Alexin Kleski (size 2)
-  Table 58:
-    - Maya Uribe (size 2)
-    - Chris  Clay (size 2)
 
 ==================== AREA 19 ====================
   Table 0:
     - Daniel Silk (size 5)
-    - Benjamin Mueller (size 2)
-    - Scott Deeney (size 2)
+    - Tom Scuderi (size 3)
+    - Prophet Thomas (size 2)
 
 ==================== AREA 20 ====================
   Table 0:
     - Joey DeLorme (size 3)
-    - John  Oldenburg (size 2)
-    - Jason Adams (size 4)
-  Table 1:
     - Kenzie  Buckhaults (size 2)
-    - Jess Adams (size 4)
-    - Victor Iacobbo (size 2)
+    - John  Oldenburg (size 2)
     - Eli Byler (size 2)
+  Table 1:
+    - Jason Adams (size 4)
+    - Jess Adams (size 4)
+    - Scott Deeney (size 2)
 
 ==================== AREA 21 ====================
   Table 0:
-    - JP West (size 2)
-    - Eric Kniffin (size 5)
     - Ken Smith (size 2)
+    - Matthew Glenn (size 2)
+    - Izzy Hayden (size 2)
+    - Robert Dover (size 2)
+    - Matt Kubiak (size 2)
 
 ==================== AREA 22 ====================
   Table 0:
-    - Miguel Fernandez (size 2)
-    - Manuel Fernandez (size 2)
+    - Benjamin Mueller (size 2)
+    - Camron Griego (size 2)
     - Jared Sauer (size 2)
-    - Robert Farris (size 2)
+    - Brandan Lloyd (size 3)
 
 ==================== AREA 23 ====================
   Table 0:
-    - Jeremiah Ardilla (size 2)
-    - Felipe  Perez  (size 2)
-    - Prophet Thomas (size 2)
-    - Neil Fournie (size 2)
+    - Miguel Fernandez (size 2)
+    - Manuel Fernandez (size 2)
+    - Bryan Rodriguerz (size 2)
+    - Reid O'Lear (size 2)
+    - Anthony Giusto (size 2)
 
 ==================== AREA 24 ====================
   Table 0:
-    - Stephen  Verwers (size 3)
+    - Michael Dunn (size 3)
+    - Tyler  Dexter (size 2)
+    - Andrew Lavoie (size 2)
+    - Matthew Bean (size 2)
+
+==================== AREA 25 ====================
+  Table 0:
+    - James  Gottry (size 2)
+    - Andy Martin (size 2)
+    - Neil Fournie (size 2)
+    - Danny  Packard  (size 3)
+
+==================== AREA 26 ====================
+  Table 0:
+    - Andre Lavoie (size 2)
     - David Foley (size 2)
     - David Willis (size 2)
     - Grace Weidmann (size 2)
-  Table 1:
     - Finlay  Gillis (size 2)
+  Table 1:
+    - Stephen  Verwers (size 3)
     - Matt Krynovich (size 2)
+    - Carlton Whitehead (size 2)
+    - Nicholas Eimer (size 2)
+
+==================== AREA 27 ====================
+  Table 0:
+    - Chris DeMary (size 2)
+    - Grady Dacus (size 3)
+    - Kevin Ridenour (size 2)
+    - John Jennings (size 2)
+
+==================== AREA 28 ====================
+  Table 0:
+    - Jacob McMurphy (size 2)
+    - Walter Lang (size 2)
+    - Matthew Whitt (size 2)
+    - Danika Reinhard (size 2)
+    - Nathan  Seward (size 2)
+
+==================== AREA 29 ====================
+  Table 0:
+    - David Adkinson (size 3)
+    - Nick Kundert (size 3)
+    - Bradley Nathan (size 2)
+    - Tyler Jones (size 2)
+  Table 1:
+    - Nathan Fisk (size 3)
+    - Jake Jones (size 2)
+    - Sydney Craig (size 2)
+    - Lizzie Breau (size 2)
+
+==================== AREA 30 ====================
+  Table 0:
+    - Ryan Davenport (size 2)
+    - Chris Spielhagen (size 3)
+    - James Schlueter (size 2)
+    - Patrick  Aston  (size 2)
+
+==================== AREA 31 ====================
+  Table 0:
+    - Eric Ruettinger (size 3)
+    - Malea  Heeter (size 2)
+    - Jason Spence (size 2)
+    - Jeremy  Cannon (size 2)
+
+==================== AREA 32 ====================
+  Table 0:
+    - Mark Nagel (size 2)
+    - Erik Larsen (size 4)
+    - Corey Wiederholt (size 2)
+    - Drew Mau (size 2)
+
+==================== AREA 33 ====================
+  Table 0:
+    - Jeff Klosky (size 3)
+    - Joseph Boyer (size 4)
+    - David Brummels (size 2)
+
+==================== AREA 34 ====================
+  Table 0:
+    - Doug Howe (size 3)
+    - Derek Jones (size 3)
     - Devin Breese (size 3)
+
+==================== AREA 35 ====================
+  Table 0:
+    - Enrique  Gonzalez  (size 2)
+    - Cowl Humphries (size 2)
+    - Jeff Lewis (size 2)
+    - Michael  Griffin (size 2)
+    - Benjamin Valentin (size 2)
+
+==================== AREA 36 ====================
+  Table 0:
+    - Ben Brightwell (size 2)
+    - Erik Gustafson (size 3)
+    - Eric Link (size 2)
+    - Andrew Kaczka (size 2)
+
+==================== AREA 37 ====================
+  Table 0:
+    - Jonathan  Mayles (size 2)
+    - Frank Djonbalaj (size 2)
+    - Toby Saben (size 3)
+    - Elias Kunishige (size 2)
+
+==================== AREA 38 ====================
+  Table 0:
+    - David Eaton (size 2)
+    - Rob Oldach (size 2)
+    - Mike Abriam (size 2)
+    - Mike Reissig (size 2)
+    - Samuel Montoya (size 2)
+
+==================== AREA 39 ====================
+  Table 0:
+    - Richard Palmer (size 2)
+    - Eric Hetzel (size 5)
+    - John Epperly (size 3)
+
+==================== AREA 40 ====================
+  Table 0:
+    - ADAM  VERI  (size 3)
+    - Juan Vazquez (size 4)
+    - Donny Thurnherr (size 3)
+
+==================== AREA 41 ====================
+  Table 0:
+    - Pete Albanese (size 2)
+    - Val LeMaire (size 2)
+    - Elka Vitt (size 2)
+    - Chris Howe (size 2)
+    - Dante Giadone (size 2)
+
+==================== AREA 42 ====================
+  Table 0:
+    - Jason Fink (size 2)
+    - Hayley  Eisenbeis (size 2)
+    - James Rickman (size 2)
+    - Steve Scheller (size 2)
+    - Kenny Knapp (size 2)
+
+==================== AREA 43 ====================
+  Table 0:
+    - Kevin Campbell (size 3)
+    - Jay Haddix (size 2)
+    - Josh Johner (size 3)
+    - Herman  Lucero (size 2)
+
+==================== AREA 44 ====================
+  Table 0:
+    - Caleb Lambert (size 2)
+    - Nathan Merrill (size 2)
+    - Seth Warren (size 2)
+    - Mike Peterson (size 2)
+    - Chris Han (size 2)
+
+==================== AREA 45 ====================
+  Table 0:
+    - Rudi Mitutoiu (size 2)
+    - Michael Pickett (size 2)
+    - Robert Burton (size 2)
+    - Johnnie Genser (size 2)
+    - Shane Dickey (size 2)
+
+==================== AREA 46 ====================
+  Table 0:
+    - Matthew  Powell (size 2)
+    - Eric  Yeager (size 2)
+    - Steven Walsh (size 2)
+    - Ryan  Plunkett (size 2)
+    - Jason Greer (size 2)
+
+==================== AREA 47 ====================
+  Table 0:
+    - Chris Giovagnoni (size 2)
+    - Aylah Tschamler (size 2)
+    - Jacob Flood (size 2)
+    - Steven Hoskins (size 2)
+    - Tim Miles (size 2)
+
+==================== AREA 48 ====================
+  Table 0:
+    - Daniel LeBaron (size 3)
+    - Nathan  Pearsall  (size 2)
+    - Damian Friend (size 2)
+    - SCOTT Wasik (size 3)
+
+==================== AREA 49 ====================
+  Table 0:
+    - Jesus Jordan (size 3)
+    - Marcus Ellis (size 4)
+    - Rick Peterson (size 2)
+
+==================== AREA 50 ====================
+  Table 0:
+    - Paul A. Krause (size 2)
+    - Ted Schmid (size 2)
+    - Marcus McFarland (size 2)
+    - Chaim Goldman (size 2)
+    - Scott Bond (size 2)
+
+==================== AREA 51 ====================
+  Table 0:
+    - Christian Rebugio (size 3)
+    - Jared May (size 2)
+    - Keith Howard (size 2)
+    - Matt Devine (size 3)
+
+==================== AREA 52 ====================
+  Table 0:
+    - Jeff Holck (size 2)
+    - Neal Oseland (size 2)
+    - Anthony Wise (size 2)
+    - Luis Ortiz Rodriguez (size 2)
+    - Kevin Baron (size 2)
+
+==================== AREA 53 ====================
+  Table 0:
+    - Jose Martinez (size 2)
+    - Kaylee Castellini (size 2)
+    - Seth  Shaver (size 3)
+    - Rodger Scriven (size 3)
+
+==================== AREA 54 ====================
+  Table 0:
+    - Josh Vogt (size 3)
+    - Sandor Csikesz (size 3)
+    - Brian Bozarth (size 3)
+
+==================== AREA 55 ====================
+  Table 0:
+    - Ryan halla (size 2)
+    - Matt Meister (size 2)
+    - Don Harms (size 2)
+    - Jeff Thomas (size 2)
+    - Josh Chesebro (size 2)
+
+==================== AREA 56 ====================
+  Table 0:
+    - Mike Evans (size 3)
+    - Marcus Button (size 5)
+    - Scott Heyler (size 2)
+
+==================== AREA 57 ====================
+  Table 0:
+    - David Nevarez (size 3)
+    - Hugo Bruciaga (size 3)
+    - Erik Talamantes (size 2)
+    - Mike Aubert (size 2)
+
+==================== AREA 58 ====================
+  Table 0:
+    - Dave Mortell (size 2)
+    - Marshal Brown (size 2)
+    - Brad Githens (size 2)
+    - Chad Mathis (size 2)
+    - Kirk Cameron (size 2)
+
+==================== AREA 59 ====================
+  Table 0:
+    - Matt Greene (size 3)
+    - Ron Hardman (size 4)
+    - David Ragsdill (size 2)
+
+==================== AREA 60 ====================
+  Table 0:
+    - Steve  Mitchell (size 3)
+    - Mark Walp (size 2)
+    - Steve Lepine (size 3)
+    - Steven Carlson (size 2)
+
+==================== AREA 61 ====================
+  Table 0:
+    - Jacque Joffrion (size 2)
+    - Rudy  Avila (size 2)
+    - Michael Taylor  (size 2)
+    - Brian Plaisted (size 2)
+    - Strings Kozisek (size 2)
+
+==================== AREA 62 ====================
+  Table 0:
+    - Shannon Cotten (size 2)
+    - Jeff Stahl (size 2)
+    - Robert Deis (size 2)
+    - Jeff Casey (size 2)
+    - David Fisher (size 2)
+
+==================== AREA 63 ====================
+  Table 0:
+    - Jason laffler Jason laffler (size 3)
+    - Evelyn Smith (size 3)
+    - Mark  Baroni (size 4)
+
+==================== AREA 64 ====================
+  Table 0:
+    - Mel Wernimont (size 3)
+    - Blake Schwank (size 2)
+    - mark stieber (size 2)
+    - Sarah Osterman (size 2)
+
+==================== AREA 65 ====================
+  Table 0:
+    - George Gaugler (size 5)
+    - Everly  Slone (size 2)
+    - Anthony Shadbolt I (size 3)
+
+==================== AREA 66 ====================
+  Table 0:
+    - Gregory Garcia (size 5)
+    - Mark Burr (size 4)
+
+==================== AREA 67 ====================
+  Table 0:
+    - Bernie  Vitale (size 4)
+    - Tad Kubacka (size 5)
+
+==================== AREA 68 ====================
+  Table 0:
+    - CHAPPY Watties (size 2)
+    - Andrew  Wright (size 3)
+    - Eire  DeZalia (size 2)
+    - Leilah Wells (size 2)
+
+==================== AREA 69 ====================
+  Table 0:
+    - Madison Young (size 2)
+    - Ava Netzler (size 2)
+    - Allyson Larsen (size 2)
+    - Kennedy Kinard (size 2)
+    - Alexis Fitzgerald (size 2)
+
+==================== AREA 70 ====================
+  Table 0:
+    - Audrey O'Boyle (size 2)
+    - Aliyah Frese (size 2)
+    - Clara Boydstun (size 2)
+    - Rileyanna Clark (size 2)
+    - Jenna Moor (size 2)
+
+==================== AREA 71 ====================
+  Table 0:
+    - Chloe Cooper (size 2)
+    - Delaney  Korte  (size 2)
+    - Brianna Thomad (size 2)
+    - Kylie  Jones (size 2)
+    - Beth Burns (size 2)
+
+==================== AREA 72 ====================
+  Table 0:
+    - Sean Briggs (size 2)
+    - Alexin Kleski (size 2)
+    - Charlie Johnson (size 2)
+    - Dereck  Fisher  (size 2)
+    - Paul Aragon (size 2)
+
+==================== AREA 73 ====================
+  Table 0:
+    - Travis Easton (size 3)
+    - Tim Sparks (size 2)
+    - Kenneth Serfas (size 2)
+    - Maya Uribe (size 2)
+
+==================== AREA 74 ====================
+  Table 0:
+    - Vuongvu Le (size 2)
+    - Ralph Mills (size 2)
+    - Dan Shelton (size 2)
+    - Christopher Armenta (size 2)
+    - Thomas Pisculli (size 2)
+
+==================== AREA 75 ====================
+  Table 0:
+    - Lily Amerine (size 2)
+    - Stephen Girlando (size 2)
+    - Gabe Salazar (size 2)
 ========================================================
 

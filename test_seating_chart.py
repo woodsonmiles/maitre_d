@@ -153,6 +153,149 @@ def test_many_small_clusters_fill_multiple_areas():
     # Each cluster requires a new table → each cluster must be a new area
     assert len(areas) >= 5
 
+def test_area_state_updates_after_placement(simple_families):
+    families, request_map, smith1, smith2, jones = simple_families
+
+    areas = {}
+    area_used = {}
+
+    cluster1 = [smith1, jones]
+    idx = assign_cluster_to_area(cluster1, areas, area_used, table_size=10, debug=False)
+
+    # simulate placement
+    tables = []
+    place_cluster_into_area(cluster1, tables, 10, request_map, debug=False)
+
+    # update area state
+    areas[idx] = tables
+    area_used[idx] = sum(f.size for table in tables for f in table)
+
+    assert len(areas[idx]) == 1
+    assert area_used[idx] == 6
+
+def test_second_cluster_fits_after_first_cluster(simple_families):
+    families, request_map, smith1, smith2, jones = simple_families
+
+    areas = {}
+    area_used = {}
+
+    # first cluster
+    cluster1 = [smith1, jones]
+    idx1 = assign_cluster_to_area(cluster1, areas, area_used, 10, debug=False)
+
+    tables = []
+    place_cluster_into_area(cluster1, tables, 10, request_map, debug=False)
+    areas[idx1] = tables
+    area_used[idx1] = sum(f.size for table in tables for f in table)
+
+    # second cluster
+    cluster2 = [smith2]
+    idx2 = assign_cluster_to_area(cluster2, areas, area_used, 10, debug=False)
+
+    assert idx2 == 0
+
+
+def test_large_cluster_forces_new_area():
+    c1 = [make_family("A", "Alpha", 4), make_family("B", "Alpha", 4)]
+    c2 = [make_family("C", "Beta", 9)]
+
+    areas = {}
+    area_used = {}
+
+    idx1 = assign_cluster_to_area(c1, areas, area_used, 10, debug=False)
+
+    tables = []
+    place_cluster_into_area(c1, tables, 10, {}, debug=False)
+    areas[idx1] = tables
+    area_used[idx1] = sum(f.size for table in tables for f in table)
+
+    idx2 = assign_cluster_to_area(c2, areas, area_used, 10, debug=False)
+
+    assert idx2 != idx1
+
+def test_cluster_fits_into_second_table():
+    # area has two tables:
+    # table 0: 8/10 used
+    # table 1: 4/10 used
+    areas = {0: [
+        [make_family("A", "Alpha", 8)],   # table 0
+        [make_family("B", "Beta", 4)],    # table 1
+    ]}
+    area_used = {0: 12}
+
+    # cluster size = 5 → fits into table 1
+    cluster = [make_family("C", "Gamma", 5)]
+
+    idx = assign_cluster_to_area(cluster, areas, area_used, table_size=10, debug=False)
+
+    # Should choose area 0
+    assert idx == 0
+
+def test_cluster_fits_into_later_table():
+    areas = {0: [
+        [make_family("A", "Alpha", 9)],   # 1 seat left
+        [make_family("B", "Beta", 10)],   # full
+        [make_family("C", "Gamma", 3)],   # 7 seats left
+    ]}
+    area_used = {0: 22}
+
+    cluster = [make_family("D", "Delta", 6)]  # fits into table 2
+
+    idx = assign_cluster_to_area(cluster, areas, area_used, table_size=10, debug=False)
+
+    assert idx == 0
+
+
+def test_cluster_must_fit_into_single_table():
+    # Area 0 has two tables:
+    # Table 0: 8/10 used → 2 seats left
+    # Table 1: 6/10 used → 4 seats left
+    areas = {
+        0: [
+            [make_family("A", "Alpha", 8)],
+            [make_family("B", "Beta", 6)],
+        ]
+    }
+    area_used = {0: 14}
+
+    # Cluster size = 5
+    # Total remaining = 6 → area-level check would pass
+    # But no single table has 5 seats → must go to new area
+    cluster = [make_family("C", "Gamma", 5)]
+
+    idx = assign_cluster_to_area(cluster, areas, area_used, table_size=10, debug=False)
+
+    assert idx != 0
+
+def test_cluster_fits_into_exactly_one_table():
+    areas = {
+        0: [
+            [make_family("A", "Alpha", 8)],  # 2 seats left
+            [make_family("B", "Beta", 3)],   # 7 seats left
+        ]
+    }
+    area_used = {0: 11}
+
+    cluster = [make_family("C", "Gamma", 6)]  # fits into table 1
+
+    idx = assign_cluster_to_area(cluster, areas, area_used, table_size=10, debug=False)
+
+    assert idx == 0
+
+def test_cluster_fits_in_no_existing_area():
+    areas = {
+        0: [[make_family("A", "Alpha", 9)]],  # 1 seat left
+        1: [[make_family("B", "Beta", 8)]],   # 2 seats left
+    }
+    area_used = {0: 9, 1: 8}
+
+    cluster = [make_family("C", "Gamma", 3)]  # needs 3 seats
+
+    idx = assign_cluster_to_area(cluster, areas, area_used, table_size=10, debug=False)
+
+    assert idx == 2  # new area
+
+
 # ---------------------------------------------------------
 # 3. Test table placement
 # ---------------------------------------------------------
@@ -372,4 +515,5 @@ def test_clusters_can_share_tables_when_space_allows():
 
     # No conflicts expected
     assert conflicts == []
+
 
